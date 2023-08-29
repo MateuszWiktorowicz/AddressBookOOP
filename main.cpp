@@ -1,9 +1,10 @@
 #include <iostream>
+#include "AddressBook.h"
 
 using namespace std;
 
 int main()
 {
-    cout << "Hello world!" << endl;
+    AddressBook addressBook;
     return 0;
 }
