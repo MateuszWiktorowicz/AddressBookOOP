@@ -1,5 +1,20 @@
 # depslib dependency file v1.0
-1693316543 source:d:\codeblocks\projects\adddressbookoop\addressbook.cpp
+1693323072 source:d:\codeblocks\projects\adddressbookoop\addressbook.cpp
+	"AddressBook.h"
 
-1693316599 source:d:\codeblocks\projects\adddressbookoop\user.cpp
+1693319296 source:d:\codeblocks\projects\adddressbookoop\user.cpp
+	"User.h"
+
+1693317033 source:d:\codeblocks\projects\adddressbookoop\main.cpp
+	<iostream>
+	"AddressBook.h"
+
+1693323072 d:\codeblocks\projects\adddressbookoop\addressbook.h
+	<iostream>
+	<vector>
+	"User.h"
+	<windows.h>
+
+1693319296 d:\codeblocks\projects\adddressbookoop\user.h
+	<iostream>
 
