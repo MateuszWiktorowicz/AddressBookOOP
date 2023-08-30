@@ -1,9 +1,15 @@
 #include <iostream>
+#include "AddressBook.h"
 
 using namespace std;
 
 int main()
 {
-    cout << "Hello world!" << endl;
+    AddressBook addressBook;
+
+    addressBook.registerUser();
+    addressBook.registerUser();
+    addressBook.registerUser();
+    addressBook.readAllAddresses();
     return 0;
 }
