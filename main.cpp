@@ -6,9 +6,6 @@ using namespace std;
 int main()
 {
     AddressBook addressBook;
-
-    addressBook.registerUser();
-    addressBook.registerUser();
     addressBook.registerUser();
     addressBook.readAllAddresses();
     return 0;
