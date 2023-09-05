@@ -20,6 +20,7 @@ class UserManager
     bool isLoginExist(string login);
     User loadUserData(string userDataSeparatedByBars);
 public:
+    UserManager(string nameOfFileWithUsers) : fileWithUsers(nameOfFileWithUsers) {};
     void registerUser();
     void readAllAddresses();
     void readUsersFromFile();

@@ -8,7 +8,11 @@ class AddressBook
 {
     UserManager userManager;
 public:
-    AddressBook();
+    AddressBook(string nameOfFileWithUsers) : userManager(nameOfFileWithUsers)
+    {
+        userManager.readUsersFromFile();
+    };
+
     void registerUser();
     void readAllAddresses();
 

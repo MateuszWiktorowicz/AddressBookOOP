@@ -1,13 +1,9 @@
 #include "FileWithUsers.h"
 
-FileWithUsers::FileWithUsers()
-{
-    nameOfFileWithUsers = "Users.txt";
-}
 
 void FileWithUsers::appendUserToTextFile(User user)
 {
-
+    fstream textFile;
     string userDatasLine = "";
     textFile.open(nameOfFileWithUsers.c_str(), ios::app);
 
@@ -31,6 +27,7 @@ void FileWithUsers::appendUserToTextFile(User user)
 
 bool FileWithUsers::isFileEmpty()
 {
+    fstream textFile;
     textFile.seekg(0, ios::end);
     if (textFile.tellg() == 0)
         return true;
@@ -50,6 +47,7 @@ string FileWithUsers::changeUserDataToLinesSeparatedByVerticalBar(User user)
 
 vector <User> FileWithUsers::readUsersFromFile()
 {
+    fstream textFile;
     User user;
     vector <User> users;
     string userDataSeparatedByBars = "";

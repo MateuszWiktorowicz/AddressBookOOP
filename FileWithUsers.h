@@ -9,14 +9,13 @@ using namespace std;
 
 class FileWithUsers
 {
-    string nameOfFileWithUsers;
-    fstream textFile;
+    const string nameOfFileWithUsers;
 
     bool isFileEmpty();
     string changeUserDataToLinesSeparatedByVerticalBar(User user);
     User loadUserData(string userDataSeparatedByBars);
 public:
-    FileWithUsers();
+    FileWithUsers(string NAMEOFFILEWITHUSERS) : nameOfFileWithUsers(NAMEOFFILEWITHUSERS) {};
     void appendUserToTextFile(User user);
     vector <User> readUsersFromFile();
 };
