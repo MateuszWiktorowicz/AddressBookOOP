@@ -68,3 +68,8 @@ void UserManager::readAllAddresses()
     }
 }
 
+void UserManager::readUsersFromFile()
+{
+    users = fileWithUsers.readUsersFromFile();
+}
+

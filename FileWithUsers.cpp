@@ -2,7 +2,7 @@
 
 FileWithUsers::FileWithUsers()
 {
-    nameOfFileWithUsers = "Uzytkownicy.txt";
+    nameOfFileWithUsers = "Users.txt";
 }
 
 void FileWithUsers::appendUserToTextFile(User user)
@@ -46,4 +46,59 @@ string FileWithUsers::changeUserDataToLinesSeparatedByVerticalBar(User user)
     userDatasLine += user.getPassword() + '|';
 
     return userDatasLine;
+}
+
+vector <User> FileWithUsers::readUsersFromFile()
+{
+    User user;
+    vector <User> users;
+    string userDataSeparatedByBars = "";
+
+
+    textFile.open(nameOfFileWithUsers.c_str(), ios::in);
+
+    if (textFile.good() == true)
+    {
+        while (getline(textFile, userDataSeparatedByBars))
+        {
+            user = loadUserData(userDataSeparatedByBars);
+            users.push_back(user);
+        }
+
+    }
+    textFile.close();
+    return users;
+}
+
+User FileWithUsers::loadUserData(string userDataSeparatedByBars)
+{
+    User user;
+    string singleUserData = "";
+    int numOfSingleUserData = 1;
+
+    for (int charPosition = 0; charPosition < userDataSeparatedByBars.length(); charPosition++)
+    {
+        if (userDataSeparatedByBars[charPosition] != '|')
+        {
+            singleUserData += userDataSeparatedByBars[charPosition];
+        }
+        else
+        {
+            switch(numOfSingleUserData)
+            {
+            case 1:
+                user.setId(atoi(singleUserData.c_str()));
+                break;
+            case 2:
+                user.setLogin(singleUserData);
+                break;
+            case 3:
+                user.setPassword(singleUserData);
+                break;
+            }
+            singleUserData = "";
+            numOfSingleUserData++;
+        }
+    }
+    return user;
 }

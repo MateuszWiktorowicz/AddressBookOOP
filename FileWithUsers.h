@@ -14,7 +14,9 @@ class FileWithUsers
 
     bool isFileEmpty();
     string changeUserDataToLinesSeparatedByVerticalBar(User user);
+    User loadUserData(string userDataSeparatedByBars);
 public:
     FileWithUsers();
     void appendUserToTextFile(User user);
+    vector <User> readUsersFromFile();
 };
