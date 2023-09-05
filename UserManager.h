@@ -18,8 +18,10 @@ class UserManager
     User insertNewUser();
     int getNewUserId();
     bool isLoginExist(string login);
+    User loadUserData(string userDataSeparatedByBars);
 public:
     void registerUser();
     void readAllAddresses();
+    void readUsersFromFile();
 
 };

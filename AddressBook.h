@@ -8,6 +8,7 @@ class AddressBook
 {
     UserManager userManager;
 public:
+    AddressBook();
     void registerUser();
     void readAllAddresses();
 
