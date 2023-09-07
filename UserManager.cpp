@@ -128,9 +128,7 @@ void UserManager::changePasswordLoggedInUser()
     fileWithUsers.saveAllUsersInFIle(users);
 }
 
-int UserManager::setIdLoggedInUser(int id)
+void UserManager::setIdLoggedInUser(int id)
 {
-
     idLoggedInUser = id;
-    return idLoggedInUser;
 };
