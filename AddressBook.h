@@ -16,5 +16,6 @@ public:
     void registerUser();
     int loginUser();
     void readAllAddresses();
+    void changePasswordLoggedInUser();
 
 };

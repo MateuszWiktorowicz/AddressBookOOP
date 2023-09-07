@@ -100,3 +100,39 @@ User FileWithUsers::loadUserData(string userDataSeparatedByBars)
     }
     return user;
 }
+
+
+
+void FileWithUsers::saveAllUsersInFIle(vector <User> &users)
+{
+    fstream textFile;
+    string lineWithUsersData = "";
+    vector <User>::iterator itrEnd = --users.end();
+
+    textFile.open(nameOfFileWithUsers.c_str(), ios::out);
+
+    if (textFile.good() == true)
+    {
+        for (vector <User>::iterator itr = users.begin(); itr != users.end(); itr++)
+        {
+            lineWithUsersData = changeUserDataToLinesSeparatedByVerticalBar(*itr);
+
+            if (itr == itrEnd)
+            {
+               textFile << lineWithUsersData;
+            }
+            else
+            {
+                textFile << lineWithUsersData << endl;
+            }
+            lineWithUsersData = "";
+        }
+    }
+    else
+    {
+        cout << "Nie mozna otworzyc pliku " << nameOfFileWithUsers << endl;
+    }
+    textFile.close();
+}
+
+
