@@ -6,6 +6,7 @@
 
 #include "User.h"
 #include "FileWithUsers.h"
+#include "helpfullMethods.h"
 
 using namespace std;
 
@@ -23,6 +24,7 @@ public:
     UserManager(string nameOfFileWithUsers) : fileWithUsers(nameOfFileWithUsers) {};
     void registerUser();
     void readAllAddresses();
-    void readUsersFromFile();
+    void loadUsersFromFile();
+    int loginUser();
 
 };

@@ -1,3 +1,6 @@
+#ifndef HELPFULLMETHODS_H
+#define HELPFULLMETHODS_H
+
 #include <iostream>
 #include <sstream>
 
@@ -7,4 +10,7 @@ class HelpfullMethods
 {
 public:
    static string convertIntoString(int num);
+   static string readLine();
 };
+
+#endif

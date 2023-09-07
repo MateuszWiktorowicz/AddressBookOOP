@@ -10,10 +10,11 @@ class AddressBook
 public:
     AddressBook(string nameOfFileWithUsers) : userManager(nameOfFileWithUsers)
     {
-        userManager.readUsersFromFile();
+        userManager.loadUsersFromFile();
     };
 
     void registerUser();
+    int loginUser();
     void readAllAddresses();
 
 };

@@ -17,5 +17,5 @@ class FileWithUsers
 public:
     FileWithUsers(string NAMEOFFILEWITHUSERS) : nameOfFileWithUsers(NAMEOFFILEWITHUSERS) {};
     void appendUserToTextFile(User user);
-    vector <User> readUsersFromFile();
+    vector <User> loadUsersFromFile();
 };
