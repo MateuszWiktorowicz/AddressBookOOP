@@ -28,5 +28,6 @@ public:
     int loginUser();
     void changePasswordLoggedInUser();
     void setIdLoggedInUser(int id);
+    void logoutUser();
 
 };
