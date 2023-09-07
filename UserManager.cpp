@@ -76,7 +76,6 @@ void UserManager::loadUsersFromFile()
 int UserManager::loginUser()
 {
     User user;
-    HelpfullMethods helpfullMethods;
     string log = "", pass = "";
 
     cout <<  "Podaj login: ";
@@ -109,3 +108,29 @@ int UserManager::loginUser()
     system("pause");
     return 0;
 }
+
+void UserManager::changePasswordLoggedInUser()
+{
+    string newPassword = "";
+    cout << "Podaj nowe haslo: ";
+    newPassword = HelpfullMethods::readLine();
+
+    for (vector <User>::iterator itr = users.begin(); itr != users.end(); itr++)
+    {
+        if (itr -> getId() == idLoggedInUser)
+        {
+            itr -> setPassword(newPassword);
+            cout << "Haslo zostalo zmienione." << endl << endl;
+            system("pause");
+            cout << itr -> getPassword();
+        }
+    }
+    fileWithUsers.saveAllUsersInFIle(users);
+}
+
+int UserManager::setIdLoggedInUser(int id)
+{
+
+    idLoggedInUser = id;
+    return idLoggedInUser;
+};

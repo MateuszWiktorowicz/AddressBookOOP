@@ -18,4 +18,6 @@ public:
     FileWithUsers(string NAMEOFFILEWITHUSERS) : nameOfFileWithUsers(NAMEOFFILEWITHUSERS) {};
     void appendUserToTextFile(User user);
     vector <User> loadUsersFromFile();
+    void saveAllUsersInFIle (vector <User>& users);
+
 };

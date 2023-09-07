@@ -13,5 +13,10 @@ void AddressBook::readAllAddresses()
 
 int AddressBook::loginUser()
 {
-    userManager.loginUser();
+      userManager.setIdLoggedInUser(userManager.loginUser());
+}
+
+void AddressBook::changePasswordLoggedInUser()
+{
+    userManager.changePasswordLoggedInUser();
 }

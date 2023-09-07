@@ -10,5 +10,6 @@ int main()
     //addressBook.registerUser();
     addressBook.readAllAddresses();
     addressBook.loginUser();
+    addressBook.changePasswordLoggedInUser();
     return 0;
 }
