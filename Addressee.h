@@ -11,12 +11,21 @@ class Addressee
     string name, surname, phone, email, address;
 public:
     void setId(int newId);
-    void setLogin(string newLogin);
-    void setPassword(string newPassword);
+    void setUserId(int userId);
+    void setName(string Name);
+    void setSurname(string Surname);
+    void setPhone(string Phone);
+    void setEmail(string Email);
+    void setAddress(string Address);
 
     int getId();
-    string getLogin();
-    string getPassword();
+    int getUserId();
+    string getName();
+    string getSurname();
+    string getPhone();
+    string getEmail();
+    string getAddress();
+
 };
 
 #endif

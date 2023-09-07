@@ -1,19 +1,19 @@
 # depslib dependency file v1.0
-1694091391 source:d:\codeblocks\projects\adddressbookoop\addressbook.cpp
+1694092484 source:d:\codeblocks\projects\adddressbookoop\addressbook.cpp
 	"AddressBook.h"
 
 1693408366 source:d:\codeblocks\projects\adddressbookoop\user.cpp
 	"User.h"
 
-1694087111 source:d:\codeblocks\projects\adddressbookoop\main.cpp
+1694092484 source:d:\codeblocks\projects\adddressbookoop\main.cpp
 	<iostream>
 	"AddressBook.h"
 
-1694087125 d:\codeblocks\projects\adddressbookoop\addressbook.h
+1694092484 d:\codeblocks\projects\adddressbookoop\addressbook.h
 	<iostream>
 	"UserManager.h"
 
-1693834825 d:\codeblocks\projects\adddressbookoop\user.h
+1694093973 d:\codeblocks\projects\adddressbookoop\user.h
 	<iostream>
 
 1694085940 source:d:\codeblocks\projects\adddressbookoop\helpfullmethods.cpp
@@ -23,7 +23,7 @@
 	<iostream>
 	<sstream>
 
-1694091379 d:\codeblocks\projects\adddressbookoop\usermanager.h
+1694092484 d:\codeblocks\projects\adddressbookoop\usermanager.h
 	<iostream>
 	<vector>
 	<fstream>
@@ -43,6 +43,22 @@
 	"User.h"
 	<fstream>
 
-1694089422 source:d:\codeblocks\projects\adddressbookoop\usermanager.cpp
+1694092484 source:d:\codeblocks\projects\adddressbookoop\usermanager.cpp
 	"UserManager.h"
+
+1694093973 source:d:\codeblocks\projects\adddressbookoop\addressee.cpp
+	"Addressee.h"
+
+1694093973 d:\codeblocks\projects\adddressbookoop\addressee.h
+	<iostream>
+
+1694093865 source:d:\codeblocks\projects\adddressbookoop\filewithaddressees.cpp
+	"FileWithAddressees.h"
+
+1694093779 d:\codeblocks\projects\adddressbookoop\filewithaddressees.h
+	<iostream>
+	<vector>
+	"HelpfullMethods.h"
+	"Addressee.h"
+	<fstream>
 
