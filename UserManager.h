@@ -27,6 +27,7 @@ public:
     void loadUsersFromFile();
     int loginUser();
     void changePasswordLoggedInUser();
-    int setIdLoggedInUser(int id);
+    void setIdLoggedInUser(int id);
+    void logoutUser();
 
 };

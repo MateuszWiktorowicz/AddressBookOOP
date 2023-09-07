@@ -122,15 +122,17 @@ void UserManager::changePasswordLoggedInUser()
             itr -> setPassword(newPassword);
             cout << "Haslo zostalo zmienione." << endl << endl;
             system("pause");
-            cout << itr -> getPassword();
         }
     }
     fileWithUsers.saveAllUsersInFIle(users);
 }
 
-int UserManager::setIdLoggedInUser(int id)
+void UserManager::setIdLoggedInUser(int id)
 {
-
     idLoggedInUser = id;
-    return idLoggedInUser;
 };
+
+void UserManager::logoutUser()
+{
+    setIdLoggedInUser(0);
+}

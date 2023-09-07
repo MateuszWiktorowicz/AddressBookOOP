@@ -20,3 +20,8 @@ void AddressBook::changePasswordLoggedInUser()
 {
     userManager.changePasswordLoggedInUser();
 }
+
+void AddressBook::logoutUser()
+{
+    userManager.logoutUser();
+}

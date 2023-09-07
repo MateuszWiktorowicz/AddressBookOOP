@@ -11,5 +11,6 @@ int main()
     addressBook.readAllAddresses();
     addressBook.loginUser();
     addressBook.changePasswordLoggedInUser();
+    addressBook.logoutUser();
     return 0;
 }
