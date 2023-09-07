@@ -10,3 +10,8 @@ void AddressBook::readAllAddresses()
 {
     userManager.readAllAddresses();
 }
+
+int AddressBook::loginUser()
+{
+    userManager.loginUser();
+}

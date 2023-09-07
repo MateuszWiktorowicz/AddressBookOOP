@@ -45,7 +45,7 @@ string FileWithUsers::changeUserDataToLinesSeparatedByVerticalBar(User user)
     return userDatasLine;
 }
 
-vector <User> FileWithUsers::readUsersFromFile()
+vector <User> FileWithUsers::loadUsersFromFile()
 {
     fstream textFile;
     User user;

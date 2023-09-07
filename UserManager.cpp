@@ -68,8 +68,44 @@ void UserManager::readAllAddresses()
     }
 }
 
-void UserManager::readUsersFromFile()
+void UserManager::loadUsersFromFile()
 {
-    users = fileWithUsers.readUsersFromFile();
+    users = fileWithUsers.loadUsersFromFile();
 }
 
+int UserManager::loginUser()
+{
+    User user;
+    HelpfullMethods helpfullMethods;
+    string log = "", pass = "";
+
+    cout <<  "Podaj login: ";
+    log = HelpfullMethods::readLine();
+
+    vector <User>::iterator itr = users.begin();
+    while (itr != users.end())
+    {
+        if (itr -> getLogin() == log)
+        {
+            for (int numOfAttempts = 3; numOfAttempts > 0; numOfAttempts--)
+            {
+                cout << "Podaj haslo. Pozostalo prob: " << numOfAttempts << ": ";
+                pass = HelpfullMethods::readLine();
+
+                if (itr -> getPassword() == pass)
+                {
+                    cout << endl << "Zalogowales sie." << endl << endl;
+                    system("pause");
+                    return itr -> getId();
+                }
+            }
+            cout << "Wprowadzono 3 razy bledne haslo." << endl;
+            system("pause");
+            return 0;
+        }
+        itr++;
+    }
+    cout << "Nie ma uzytkownika z takim loginem" << endl << endl;
+    system("pause");
+    return 0;
+}
