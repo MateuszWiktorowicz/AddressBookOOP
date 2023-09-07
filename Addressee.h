@@ -11,7 +11,7 @@ class Addressee
     string name, surname, phone, email, address;
 public:
     void setId(int newId);
-    void setUserId(int userId);
+    void setUserId(int UserId);
     void setName(string Name);
     void setSurname(string Surname);
     void setPhone(string Phone);
