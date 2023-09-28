@@ -8,12 +8,15 @@ void AddressBook::registerUser()
 
 void AddressBook::readAllAddresses()
 {
-    userManager.readAllAddresses();
+    addresseeManager.readAllAddresses();
 }
 
-int AddressBook::loginUser()
+void AddressBook::loginUser()
 {
       userManager.setIdLoggedInUser(userManager.loginUser());
+      addresseeManager.setIdLoggedInUser(userManager.getIdLoggedInUser());
+      addresseeManager.setLastAddresseeId(addresseeManager.loadAddresseesLogedInUserFromFile());
+
 }
 
 void AddressBook::changePasswordLoggedInUser()
@@ -25,3 +28,10 @@ void AddressBook::logoutUser()
 {
     userManager.logoutUser();
 }
+
+void AddressBook::insertNewAddressee()
+{
+    vector <Addressee> addressees;
+    addresseeManager.insertNewAddressee();
+}
+
