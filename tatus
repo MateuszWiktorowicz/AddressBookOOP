@@ -1,0 +1,36 @@
+* [33m11e8d1d[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m getters and setters added
+* [33m1972aed[m correct addresse to addressee
+* [33macec7eb[m create draft of AddresseeManager and Addressee classes
+*   [33m685789d[m Merge branch 'feature__logout-user'
+[32m|[m[33m\[m  
+[32m|[m * [33m407ad7b[m logout user feature added
+[32m|[m * [33m3780dc3[m refactor
+[32m|[m[32m/[m  
+*   [33mcef7429[m Merge branch 'feature__user-change-password'
+[34m|[m[35m\[m  
+[34m|[m * [33m384915d[m Add change user password feature
+[34m|[m[34m/[m  
+*   [33m20f3fcf[m Merge branch 'feature__login-user'
+[36m|[m[1;31m\[m  
+[36m|[m * [33m38cacd4[m add feature login user
+[36m|[m[36m/[m  
+*   [33mf95c8d5[m Merge branch 'feature__setup-filename-at-begining'
+[1;32m|[m[1;33m\[m  
+[1;32m|[m * [33me6efcf9[m setup filename to load users at begining
+[1;32m|[m[1;32m/[m  
+*   [33m8518549[m Merge branch 'feature__load-user-at-start'
+[1;34m|[m[1;35m\[m  
+[1;34m|[m * [33mb1457f5[m added load users into vector at start of program
+[1;34m|[m[1;34m/[m  
+*   [33me20cad1[m Merge branch 'refactor__user-register'
+[1;36m|[m[31m\[m  
+[1;36m|[m * [33m2d632a6[m Divide AddressBook to smaller class
+[1;36m|[m[1;36m/[m  
+*   [33m4a93810[m Merge branch 'feature__user-register'
+[32m|[m[33m\[m  
+[32m|[m * [33m1d2355a[m Add registered users to text file
+[32m|[m * [33m1e3d762[m Add registered user to vector
+[32m|[m * [33md486329[m Create base class AddressBook and User
+[32m|[m[32m/[m  
+* [33m58d5b36[m Empty project
+* [33m31e2b8b[m Added .gitignore
