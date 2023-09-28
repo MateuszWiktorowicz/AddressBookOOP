@@ -58,15 +58,7 @@ bool UserManager::isLoginExist(string login)
     return false;
 }
 
-void UserManager::readAllAddresses()
-{
-    for (int i = 0; i < users.size(); i++)
-    {
-        cout << users[i].getId() << endl;
-        cout << users[i].getLogin() << endl;
-        cout << users[i].getPassword() << endl;
-    }
-}
+
 
 void UserManager::loadUsersFromFile()
 {
@@ -134,5 +126,11 @@ void UserManager::setIdLoggedInUser(int id)
 
 void UserManager::logoutUser()
 {
+
     setIdLoggedInUser(0);
+}
+
+int UserManager::getIdLoggedInUser()
+{
+    return idLoggedInUser;
 }
