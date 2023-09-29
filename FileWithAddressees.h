@@ -9,8 +9,8 @@ using namespace std;
 
 class FileWithAddressees
 {
-    const string nameOfFileWithAddressees = "Addressees.txt";
-
+    const string nameOfFileWithAddressees;
+    int lastAddresseeId;
 
     bool isFileEmpty(fstream &textFile);
 
@@ -20,7 +20,10 @@ class FileWithAddressees
     int getIdUserFromDataSeparatedByBars(string oneAddresseeDatasSeparatedByBar);
 
 public:
+    FileWithAddressees(string NAMEOFFILEWITHADDRESSEES) : nameOfFileWithAddressees(NAMEOFFILEWITHADDRESSEES) {lastAddresseeId = 0;};
     int loadAddresseesLogedInUserFromFile(vector <Addressee> &addressees, int idLoggedInUser);
     void appendAddresseeToFile(Addressee addressee);
+    int getLastAddresseeId();
+    void setLastAddresseId();
 
 };

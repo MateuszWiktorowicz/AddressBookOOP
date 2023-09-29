@@ -10,7 +10,9 @@ class AddressBook
     UserManager userManager;
     AddresseeManager addresseeManager;
 public:
-    AddressBook(string nameOfFileWithUsers) : userManager(nameOfFileWithUsers)
+    AddressBook(string nameOfFileWithUsers, string nameOfFileWithAddressees)
+    : userManager(nameOfFileWithUsers), addresseeManager(nameOfFileWithAddressees)
+
     {
         userManager.loadUsersFromFile();
     };

@@ -13,9 +13,9 @@ void AddressBook::readAllAddresses()
 
 void AddressBook::loginUser()
 {
-      userManager.setIdLoggedInUser(userManager.loginUser());
+      userManager.loginUser();
       addresseeManager.setIdLoggedInUser(userManager.getIdLoggedInUser());
-      addresseeManager.setLastAddresseeId(addresseeManager.loadAddresseesLogedInUserFromFile());
+      addresseeManager.loadAddresseesLogedInUserFromFile();
 
 }
 
@@ -31,7 +31,6 @@ void AddressBook::logoutUser()
 
 void AddressBook::insertNewAddressee()
 {
-    vector <Addressee> addressees;
     addresseeManager.insertNewAddressee();
 }
 
