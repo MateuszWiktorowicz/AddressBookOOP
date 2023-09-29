@@ -54,7 +54,6 @@ string FileWithAddressees::changeAddresseDataToLinesSeparatedByVerticalBar(Addre
 int FileWithAddressees::loadAddresseesLogedInUserFromFile(vector <Addressee> &addressees, int idLoggedInUser)
 {
     Addressee addressee;
-    int idLastAddressee = 0;
     string oneAddresseeDatasSeparatedByBar = "";
     string lastAddresseeDataInFile = "";
     fstream textFile;
@@ -79,8 +78,8 @@ int FileWithAddressees::loadAddresseesLogedInUserFromFile(vector <Addressee> &ad
 
     if (lastAddresseeDataInFile != "")
     {
-        idLastAddressee = loadAddresseeIdFromDataSeparatedByBars(lastAddresseeDataInFile);
-        return idLastAddressee;
+        lastAddresseeId = loadAddresseeIdFromDataSeparatedByBars(lastAddresseeDataInFile);
+        return lastAddresseeId;
     }
     else
         return 0;
@@ -144,4 +143,14 @@ int FileWithAddressees::loadAddresseeIdFromDataSeparatedByBars(string oneAddress
     int addresseeIdStartPosition = 0;
     int addresseeId = HelpfullMethods::convertStringIntoInt(HelpfullMethods::getNumber(oneAddresseeDatasSeparatedByBar, addresseeIdStartPosition));
     return addresseeId;
+}
+
+int FileWithAddressees::getLastAddresseeId()
+{
+    return lastAddresseeId;
+}
+
+void FileWithAddressees::setLastAddresseId()
+{
+    lastAddresseeId += 1;
 }

@@ -1,17 +1,17 @@
 #include "AddresseeManager.h"
 
-int AddresseeManager::insertNewAddressee()
+void AddresseeManager::insertNewAddressee()
 {
     Addressee addressee;
 
     system("cls");
     cout << " >>> DODAWANIE NOWEGO ADRESATA <<<" << endl << endl;
-    addressee = insertNewAddresseeDatas(idLoggedInUser, lastAddresseeId);
+    addressee = insertNewAddresseeDatas(idLoggedInUser, fileWithAddressees.getLastAddresseeId());
 
     addressees.push_back(addressee);
     fileWithAddressees.appendAddresseeToFile(addressee);
+    fileWithAddressees.setLastAddresseId();
 
-    return ++lastAddresseeId;
 }
 
 Addressee AddresseeManager::insertNewAddresseeDatas(int idLoggedInUser, int lastAddresseeId)
@@ -51,24 +51,14 @@ void AddresseeManager::setIdLoggedInUser(int id)
     idLoggedInUser = id;
 };
 
-void AddresseeManager::setLastAddresseeId(int id)
-{
-    lastAddresseeId = id;
-}
-
 int AddresseeManager::getIdLoggedInUser()
 {
     return idLoggedInUser;
 }
 
-int AddresseeManager::getLastAddresseeId()
-{
-    return lastAddresseeId;
-}
 
 void AddresseeManager::readAllAddresses()
 {
-    cout << addressees.size();
     for (int i = 0; i < addressees.size(); i++)
     {
         cout << addressees[i].getId() << endl;

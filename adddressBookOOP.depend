@@ -1,20 +1,20 @@
 # depslib dependency file v1.0
-1695905631 source:d:\codeblocks\projects\adddressbookoop\addressbook.cpp
+1695995055 source:d:\codeblocks\projects\adddressbookoop\addressbook.cpp
 	"AddressBook.h"
 
 1693408366 source:d:\codeblocks\projects\adddressbookoop\user.cpp
 	"User.h"
 
-1695905038 source:d:\codeblocks\projects\adddressbookoop\main.cpp
+1695984892 source:d:\codeblocks\projects\adddressbookoop\main.cpp
 	<iostream>
 	"AddressBook.h"
 
-1695905631 d:\codeblocks\projects\adddressbookoop\addressbook.h
+1695983332 d:\codeblocks\projects\adddressbookoop\addressbook.h
 	<iostream>
 	"UserManager.h"
 	"AddresseeManager.h"
 
-1694093973 d:\codeblocks\projects\adddressbookoop\user.h
+1695993834 d:\codeblocks\projects\adddressbookoop\user.h
 	<iostream>
 
 1695811575 source:d:\codeblocks\projects\adddressbookoop\helpfullmethods.cpp
@@ -25,7 +25,7 @@
 	<sstream>
 	<algorithm>
 
-1695823797 d:\codeblocks\projects\adddressbookoop\usermanager.h
+1695994460 d:\codeblocks\projects\adddressbookoop\usermanager.h
 	<iostream>
 	<vector>
 	<fstream>
@@ -38,14 +38,14 @@
 1694091694 source:d:\codeblocks\projects\adddressbookoop\filewithusers.cpp
 	"FileWithUsers.h"
 
-1694091694 d:\codeblocks\projects\adddressbookoop\filewithusers.h
+1695993835 d:\codeblocks\projects\adddressbookoop\filewithusers.h
 	<iostream>
 	<vector>
 	"HelpfullMethods.h"
 	"User.h"
 	<fstream>
 
-1695823797 source:d:\codeblocks\projects\adddressbookoop\usermanager.cpp
+1695994132 source:d:\codeblocks\projects\adddressbookoop\usermanager.cpp
 	"UserManager.h"
 
 1694096571 source:d:\codeblocks\projects\adddressbookoop\addressee.cpp
@@ -54,20 +54,20 @@
 1694096486 d:\codeblocks\projects\adddressbookoop\addressee.h
 	<iostream>
 
-1695818339 source:d:\codeblocks\projects\adddressbookoop\filewithaddressees.cpp
+1695994993 source:d:\codeblocks\projects\adddressbookoop\filewithaddressees.cpp
 	"FileWithAddressees.h"
 
-1695823323 d:\codeblocks\projects\adddressbookoop\filewithaddressees.h
+1695994993 d:\codeblocks\projects\adddressbookoop\filewithaddressees.h
 	<iostream>
 	<vector>
 	"HelpfullMethods.h"
 	"Addressee.h"
 	<fstream>
 
-1695905718 source:d:\codeblocks\projects\adddressbookoop\addresseemanager.cpp
+1695995035 source:d:\codeblocks\projects\adddressbookoop\addresseemanager.cpp
 	"AddresseeManager.h"
 
-1695905718 d:\codeblocks\projects\adddressbookoop\addresseemanager.h
+1695995033 d:\codeblocks\projects\adddressbookoop\addresseemanager.h
 	<iostream>
 	<vector>
 	<fstream>

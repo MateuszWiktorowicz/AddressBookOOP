@@ -13,20 +13,18 @@ using namespace std;
 class AddresseeManager
 {
     int idLoggedInUser;
-    int lastAddresseeId;
     vector <Addressee> addressees;
     FileWithAddressees fileWithAddressees;
 
 
-    Addressee insertNewAddresseeDatas(int idZalogowanegoUzytkownika, int lastAddresseeId);
+    Addressee insertNewAddresseeDatas(int idLoggedInUser, int lastAddresseeId);
 
 public:
-    int insertNewAddressee();
+    AddresseeManager(string nameOfFileWithAddresses) : fileWithAddressees(nameOfFileWithAddresses) {idLoggedInUser = 0;};
+    void insertNewAddressee();
     int loadAddresseesLogedInUserFromFile();
     int getIdLoggedInUser();
-    int getLastAddresseeId();
     void setIdLoggedInUser(int id);
-    void setLastAddresseeId(int id);
     void readAllAddresses();
 
 

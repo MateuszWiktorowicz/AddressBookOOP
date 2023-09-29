@@ -87,7 +87,8 @@ int UserManager::loginUser()
                 {
                     cout << endl << "Zalogowales sie." << endl << endl;
                     system("pause");
-                    return itr -> getId();
+                    idLoggedInUser = itr -> getId();
+                    return  idLoggedInUser;
                 }
             }
             cout << "Wprowadzono 3 razy bledne haslo." << endl;
@@ -119,15 +120,11 @@ void UserManager::changePasswordLoggedInUser()
     fileWithUsers.saveAllUsersInFIle(users);
 }
 
-void UserManager::setIdLoggedInUser(int id)
-{
-    idLoggedInUser = id;
-};
 
 void UserManager::logoutUser()
 {
 
-    setIdLoggedInUser(0);
+    idLoggedInUser = 0;
 }
 
 int UserManager::getIdLoggedInUser()
