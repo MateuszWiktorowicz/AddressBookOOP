@@ -4,7 +4,7 @@ void FileWithAddressees::appendAddresseeToFile(Addressee addressee)
 {
     string lineWithAddresseData = "";
     fstream textFile;
-    textFile.open(nameOfFileWithAddressees.c_str(), ios::out | ios::app);
+    textFile.open(NAME_OF_FILE_WITH_ADDRESSEES.c_str(), ios::out | ios::app);
 
     if (textFile.good())
     {
@@ -57,7 +57,7 @@ int FileWithAddressees::loadAddresseesLogedInUserFromFile(vector <Addressee> &ad
     string oneAddresseeDatasSeparatedByBar = "";
     string lastAddresseeDataInFile = "";
     fstream textFile;
-    textFile.open(nameOfFileWithAddressees.c_str(), ios::in);
+    textFile.open(NAME_OF_FILE_WITH_ADDRESSEES.c_str(), ios::in);
 
     if (textFile.good() == true)
     {
