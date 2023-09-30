@@ -74,7 +74,7 @@ User FileWithUsers::loadUserData(string userDataSeparatedByBars)
     string singleUserData = "";
     int numOfSingleUserData = 1;
 
-    for (int charPosition = 0; charPosition < userDataSeparatedByBars.length(); charPosition++)
+    for (size_t charPosition = 0; charPosition < userDataSeparatedByBars.length(); charPosition++)
     {
         if (userDataSeparatedByBars[charPosition] != '|')
         {

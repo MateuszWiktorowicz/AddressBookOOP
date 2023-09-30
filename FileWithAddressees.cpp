@@ -99,7 +99,7 @@ Addressee FileWithAddressees::getAddresseeData(string addresseeDatasSeparatedByB
     string singleAddresseeData = "";
     int numOfSingleAddresseeData = 1;
 
-    for (int signPosition = 0; signPosition < addresseeDatasSeparatedByBar.length(); signPosition++)
+    for (size_t signPosition = 0; signPosition < addresseeDatasSeparatedByBar.length(); signPosition++)
     {
         if (addresseeDatasSeparatedByBar[signPosition] != '|')
         {

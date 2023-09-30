@@ -41,7 +41,7 @@ Addressee AddresseeManager::insertNewAddresseeDatas()
     return addressee;
 }
 
-int AddresseeManager::loadAddresseesLogedInUserFromFile()
+void AddresseeManager::loadAddresseesLogedInUserFromFile()
 {
     fileWithAddressees.loadAddresseesLogedInUserFromFile(addressees, idLoggedInUser);
 }
@@ -59,7 +59,7 @@ int AddresseeManager::getIdLoggedInUser()
 
 void AddresseeManager::readAllAddresses()
 {
-    for (int i = 0; i < addressees.size(); i++)
+    for (size_t i = 0; i < addressees.size(); i++)
     {
         cout << addressees[i].getId() << endl;
         cout << addressees[i].getUserId() << endl;

@@ -22,7 +22,7 @@ class AddresseeManager
 public:
     AddresseeManager(string nameOfFileWithAddresses) : fileWithAddressees(nameOfFileWithAddresses) {idLoggedInUser = 0;};
     void insertNewAddressee();
-    int loadAddresseesLogedInUserFromFile();
+    void loadAddresseesLogedInUserFromFile();
     int getIdLoggedInUser();
     void setIdLoggedInUser(int id);
     void readAllAddresses();
