@@ -11,11 +11,7 @@ class AddressBook
     AddresseeManager addresseeManager;
 public:
     AddressBook(string nameOfFileWithUsers, string nameOfFileWithAddressees)
-    : userManager(nameOfFileWithUsers), addresseeManager(nameOfFileWithAddressees)
-
-    {
-        userManager.loadUsersFromFile();
-    };
+    : userManager(nameOfFileWithUsers), addresseeManager(nameOfFileWithAddressees) {};
 
     void registerUser();
     void loginUser();

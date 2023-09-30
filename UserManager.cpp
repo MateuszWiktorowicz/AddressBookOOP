@@ -58,13 +58,6 @@ bool UserManager::isLoginExist(string login)
     return false;
 }
 
-
-
-void UserManager::loadUsersFromFile()
-{
-    users = fileWithUsers.loadUsersFromFile();
-}
-
 int UserManager::loginUser()
 {
     User user;
