@@ -26,6 +26,6 @@ public:
     int getIdLoggedInUser();
     void setIdLoggedInUser(int id);
     void readAllAddresses();
-
+    void clearVector();
 
 };

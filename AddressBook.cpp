@@ -27,6 +27,7 @@ void AddressBook::changePasswordLoggedInUser()
 void AddressBook::logoutUser()
 {
     userManager.logoutUser();
+    addresseeManager.clearVector();
 }
 
 void AddressBook::insertNewAddressee()
