@@ -51,11 +51,6 @@ void AddresseeManager::setIdLoggedInUser(int id)
     idLoggedInUser = id;
 };
 
-int AddresseeManager::getIdLoggedInUser()
-{
-    return idLoggedInUser;
-}
-
 
 void AddresseeManager::readAllAddresses()
 {

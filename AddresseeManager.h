@@ -23,7 +23,6 @@ public:
     AddresseeManager(string nameOfFileWithAddresses) : fileWithAddressees(nameOfFileWithAddresses) {idLoggedInUser = 0;};
     void insertNewAddressee();
     void loadAddresseesLogedInUserFromFile();
-    int getIdLoggedInUser();
     void setIdLoggedInUser(int id);
     void readAllAddresses();
     void clearVector();
