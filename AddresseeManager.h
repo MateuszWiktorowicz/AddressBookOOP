@@ -17,7 +17,7 @@ class AddresseeManager
     FileWithAddressees fileWithAddressees;
 
 
-    Addressee insertNewAddresseeDatas(int idLoggedInUser, int lastAddresseeId);
+    Addressee insertNewAddresseeDatas();
 
 public:
     AddresseeManager(string nameOfFileWithAddresses) : fileWithAddressees(nameOfFileWithAddresses) {idLoggedInUser = 0;};

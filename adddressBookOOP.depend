@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1696058670 source:d:\codeblocks\projects\adddressbookoop\addressbook.cpp
+1696059365 source:d:\codeblocks\projects\adddressbookoop\addressbook.cpp
 	"AddressBook.h"
 
 1693408366 source:d:\codeblocks\projects\adddressbookoop\user.cpp
@@ -64,10 +64,10 @@
 	"Addressee.h"
 	<fstream>
 
-1696058670 source:d:\codeblocks\projects\adddressbookoop\addresseemanager.cpp
+1696059494 source:d:\codeblocks\projects\adddressbookoop\addresseemanager.cpp
 	"AddresseeManager.h"
 
-1696058670 d:\codeblocks\projects\adddressbookoop\addresseemanager.h
+1696059495 d:\codeblocks\projects\adddressbookoop\addresseemanager.h
 	<iostream>
 	<vector>
 	<fstream>

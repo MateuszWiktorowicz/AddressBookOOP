@@ -6,7 +6,7 @@ void AddresseeManager::insertNewAddressee()
 
     system("cls");
     cout << " >>> DODAWANIE NOWEGO ADRESATA <<<" << endl << endl;
-    addressee = insertNewAddresseeDatas(idLoggedInUser, fileWithAddressees.getLastAddresseeId());
+    addressee = insertNewAddresseeDatas();
 
     addressees.push_back(addressee);
     fileWithAddressees.appendAddresseeToFile(addressee);
@@ -14,11 +14,11 @@ void AddresseeManager::insertNewAddressee()
 
 }
 
-Addressee AddresseeManager::insertNewAddresseeDatas(int idLoggedInUser, int lastAddresseeId)
+Addressee AddresseeManager::insertNewAddresseeDatas()
 {
     Addressee addressee;
 
-    addressee.setId(++lastAddresseeId);
+    addressee.setId(fileWithAddressees.getLastAddresseeId() + 1);
     addressee.setUserId(idLoggedInUser);
 
     cout << "Podaj imie: ";
