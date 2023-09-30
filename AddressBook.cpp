@@ -6,17 +6,11 @@ void AddressBook::registerUser()
     userManager.registerUser();
 }
 
-void AddressBook::readAllAddresses()
-{
-    addresseeManager.readAllAddresses();
-}
-
 void AddressBook::loginUser()
 {
       userManager.loginUser();
       addresseeManager.setIdLoggedInUser(userManager.getIdLoggedInUser());
       addresseeManager.loadAddresseesLogedInUserFromFile();
-
 }
 
 void AddressBook::changePasswordLoggedInUser()
@@ -35,3 +29,7 @@ void AddressBook::insertNewAddressee()
     addresseeManager.insertNewAddressee();
 }
 
+void AddressBook::readAllAddresses()
+{
+    addresseeManager.readAllAddresses();
+}
