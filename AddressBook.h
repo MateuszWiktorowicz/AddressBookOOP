@@ -2,11 +2,13 @@
 
 #include "UserManager.h"
 #include "AddresseeManager.h"
+#include "MenuManager.h"
 
 using namespace std;
 
 class AddressBook
 {
+    MenuManager menuManager;
     UserManager userManager;
     AddresseeManager *addresseeManager;
     const string NAME_OF_FILE_WITH_ADDRESSEES;
@@ -29,5 +31,8 @@ public:
     void logoutUser();
     void insertNewAddressee();
     void loadAddresseesLogedInUserFromFile();
+    bool isUserLoggedIn();
+    char choiceOptionFromMainMenu();
+    char choiceOptionFromUserMenu();
 
 };

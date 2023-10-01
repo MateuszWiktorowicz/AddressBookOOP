@@ -47,6 +47,7 @@ void AddressBook::readAllAddresses()
     if (userManager.isUserLoggedIn())
     {
         addresseeManager -> readAllAddresses();
+        system("pause");
     }
     else
     {
@@ -55,3 +56,19 @@ void AddressBook::readAllAddresses()
     }
 
 }
+
+bool AddressBook::isUserLoggedIn()
+{
+    return userManager.isUserLoggedIn();
+}
+
+char AddressBook::choiceOptionFromMainMenu()
+{
+   return menuManager.choiceOptionFromMainMenu();
+}
+
+char AddressBook::choiceOptionFromUserMenu()
+{
+   return menuManager.choiceOptionFromUserMenu();
+}
+
