@@ -46,7 +46,7 @@ int UserManager::getNewUserId()
 
 bool UserManager::isLoginExist(string login)
 {
-    for (int i = 0; i <users.size(); i++)
+    for (size_t i = 0; i <users.size(); i++)
     {
         if (users[i].getLogin() == login)
         {
@@ -56,13 +56,6 @@ bool UserManager::isLoginExist(string login)
     }
 
     return false;
-}
-
-
-
-void UserManager::loadUsersFromFile()
-{
-    users = fileWithUsers.loadUsersFromFile();
 }
 
 int UserManager::loginUser()
@@ -123,11 +116,15 @@ void UserManager::changePasswordLoggedInUser()
 
 void UserManager::logoutUser()
 {
-
     idLoggedInUser = 0;
 }
 
 int UserManager::getIdLoggedInUser()
 {
     return idLoggedInUser;
+}
+
+bool UserManager::isUserLoggedIn()
+{
+    return (idLoggedInUser > 0) ? true : false;
 }

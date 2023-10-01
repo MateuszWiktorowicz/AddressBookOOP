@@ -4,7 +4,7 @@ void FileWithAddressees::appendAddresseeToFile(Addressee addressee)
 {
     string lineWithAddresseData = "";
     fstream textFile;
-    textFile.open(nameOfFileWithAddressees.c_str(), ios::out | ios::app);
+    textFile.open(NAME_OF_FILE_WITH_ADDRESSEES.c_str(), ios::out | ios::app);
 
     if (textFile.good())
     {
@@ -51,13 +51,14 @@ string FileWithAddressees::changeAddresseDataToLinesSeparatedByVerticalBar(Addre
     return lineWithAddresseData;
 }
 
-int FileWithAddressees::loadAddresseesLogedInUserFromFile(vector <Addressee> &addressees, int idLoggedInUser)
+vector <Addressee> FileWithAddressees::loadAddresseesLogedInUserFromFile(int idLoggedInUser)
 {
+    vector <Addressee> addressees;
     Addressee addressee;
     string oneAddresseeDatasSeparatedByBar = "";
     string lastAddresseeDataInFile = "";
     fstream textFile;
-    textFile.open(nameOfFileWithAddressees.c_str(), ios::in);
+    textFile.open(NAME_OF_FILE_WITH_ADDRESSEES.c_str(), ios::in);
 
     if (textFile.good() == true)
     {
@@ -79,10 +80,8 @@ int FileWithAddressees::loadAddresseesLogedInUserFromFile(vector <Addressee> &ad
     if (lastAddresseeDataInFile != "")
     {
         lastAddresseeId = loadAddresseeIdFromDataSeparatedByBars(lastAddresseeDataInFile);
-        return lastAddresseeId;
     }
-    else
-        return 0;
+    return addressees;
 }
 
 int FileWithAddressees::getIdUserFromDataSeparatedByBars(string oneAddresseeDatasSeparatedByBar)
@@ -99,7 +98,7 @@ Addressee FileWithAddressees::getAddresseeData(string addresseeDatasSeparatedByB
     string singleAddresseeData = "";
     int numOfSingleAddresseeData = 1;
 
-    for (int signPosition = 0; signPosition < addresseeDatasSeparatedByBar.length(); signPosition++)
+    for (size_t signPosition = 0; signPosition < addresseeDatasSeparatedByBar.length(); signPosition++)
     {
         if (addresseeDatasSeparatedByBar[signPosition] != '|')
         {

@@ -21,7 +21,12 @@ class UserManager
     bool isLoginExist(string login);
     User loadUserData(string userDataSeparatedByBars);
 public:
-    UserManager(string nameOfFileWithUsers) : fileWithUsers(nameOfFileWithUsers) {idLoggedInUser = 0;};
+    UserManager(string nameOfFileWithUsers) : fileWithUsers(nameOfFileWithUsers)
+    {
+        idLoggedInUser = 0;
+        users = fileWithUsers.loadUsersFromFile();
+    };
+
     void registerUser();
 
     void loadUsersFromFile();
@@ -29,5 +34,6 @@ public:
     void changePasswordLoggedInUser();
     int getIdLoggedInUser();
     void logoutUser();
+    bool isUserLoggedIn();
 
 };

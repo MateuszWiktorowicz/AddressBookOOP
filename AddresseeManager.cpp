@@ -6,7 +6,7 @@ void AddresseeManager::insertNewAddressee()
 
     system("cls");
     cout << " >>> DODAWANIE NOWEGO ADRESATA <<<" << endl << endl;
-    addressee = insertNewAddresseeDatas(idLoggedInUser, fileWithAddressees.getLastAddresseeId());
+    addressee = insertNewAddresseeDatas();
 
     addressees.push_back(addressee);
     fileWithAddressees.appendAddresseeToFile(addressee);
@@ -14,12 +14,12 @@ void AddresseeManager::insertNewAddressee()
 
 }
 
-Addressee AddresseeManager::insertNewAddresseeDatas(int idLoggedInUser, int lastAddresseeId)
+Addressee AddresseeManager::insertNewAddresseeDatas()
 {
     Addressee addressee;
 
-    addressee.setId(++lastAddresseeId);
-    addressee.setUserId(idLoggedInUser);
+    addressee.setId(fileWithAddressees.getLastAddresseeId() + 1);
+    addressee.setUserId(ID_LOGGED_IN_USER);
 
     cout << "Podaj imie: ";
     addressee.setName(HelpfullMethods::readLine());
@@ -41,25 +41,9 @@ Addressee AddresseeManager::insertNewAddresseeDatas(int idLoggedInUser, int last
     return addressee;
 }
 
-int AddresseeManager::loadAddresseesLogedInUserFromFile()
-{
-    fileWithAddressees.loadAddresseesLogedInUserFromFile(addressees, idLoggedInUser);
-}
-
-void AddresseeManager::setIdLoggedInUser(int id)
-{
-    idLoggedInUser = id;
-};
-
-int AddresseeManager::getIdLoggedInUser()
-{
-    return idLoggedInUser;
-}
-
-
 void AddresseeManager::readAllAddresses()
 {
-    for (int i = 0; i < addressees.size(); i++)
+    for (size_t i = 0; i < addressees.size(); i++)
     {
         cout << addressees[i].getId() << endl;
         cout << addressees[i].getUserId() << endl;
@@ -69,4 +53,9 @@ void AddresseeManager::readAllAddresses()
         cout << addressees[i].getEmail() << endl;
         cout << addressees[i].getAddress() << endl;
     }
+}
+
+void AddresseeManager::clearVector()
+{
+    addressees.clear();
 }
