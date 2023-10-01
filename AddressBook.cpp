@@ -37,10 +37,9 @@ void AddressBook::insertNewAddressee()
     else
     {
            cout << "Musisz sie zalogowac" << endl;
+           system("pause");
     }
 
-
-    system("pause");
 }
 
 void AddressBook::readAllAddresses()
@@ -52,6 +51,7 @@ void AddressBook::readAllAddresses()
     else
     {
            cout << "Musisz sie zalogowac" << endl;
+           system("pause");
     }
 
 }
