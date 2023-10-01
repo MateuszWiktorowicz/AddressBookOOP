@@ -19,7 +19,7 @@ Addressee AddresseeManager::insertNewAddresseeDatas()
     Addressee addressee;
 
     addressee.setId(fileWithAddressees.getLastAddresseeId() + 1);
-    addressee.setUserId(idLoggedInUser);
+    addressee.setUserId(ID_LOGGED_IN_USER);
 
     cout << "Podaj imie: ";
     addressee.setName(HelpfullMethods::readLine());
@@ -40,17 +40,6 @@ Addressee AddresseeManager::insertNewAddresseeDatas()
 
     return addressee;
 }
-
-void AddresseeManager::loadAddresseesLogedInUserFromFile()
-{
-    fileWithAddressees.loadAddresseesLogedInUserFromFile(addressees, idLoggedInUser);
-}
-
-void AddresseeManager::setIdLoggedInUser(int id)
-{
-    idLoggedInUser = id;
-};
-
 
 void AddresseeManager::readAllAddresses()
 {

@@ -8,10 +8,19 @@ using namespace std;
 class AddressBook
 {
     UserManager userManager;
-    AddresseeManager addresseeManager;
+    AddresseeManager *addresseeManager;
+    const string NAME_OF_FILE_WITH_ADDRESSEES;
 public:
     AddressBook(string nameOfFileWithUsers, string nameOfFileWithAddressees)
-    : userManager(nameOfFileWithUsers), addresseeManager(nameOfFileWithAddressees) {};
+    : userManager(nameOfFileWithUsers), NAME_OF_FILE_WITH_ADDRESSEES(nameOfFileWithAddressees)
+    {
+        addresseeManager = NULL;
+    };
+    ~AddressBook()
+    {
+      delete addresseeManager;
+      addresseeManager = NULL;
+    };
 
     void registerUser();
     void loginUser();

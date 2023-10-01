@@ -9,8 +9,11 @@ void AddressBook::registerUser()
 void AddressBook::loginUser()
 {
       userManager.loginUser();
-      addresseeManager.setIdLoggedInUser(userManager.getIdLoggedInUser());
-      addresseeManager.loadAddresseesLogedInUserFromFile();
+      if (userManager.isUserLoggedIn())
+      {
+          addresseeManager = new AddresseeManager(NAME_OF_FILE_WITH_ADDRESSEES, userManager.getIdLoggedInUser());
+      }
+
 }
 
 void AddressBook::changePasswordLoggedInUser()
@@ -21,15 +24,34 @@ void AddressBook::changePasswordLoggedInUser()
 void AddressBook::logoutUser()
 {
     userManager.logoutUser();
-    addresseeManager.clearVector();
+    delete addresseeManager;
+    addresseeManager = NULL;
 }
 
 void AddressBook::insertNewAddressee()
 {
-    addresseeManager.insertNewAddressee();
+    if (userManager.isUserLoggedIn())
+    {
+        addresseeManager -> insertNewAddressee();
+    }
+    else
+    {
+           cout << "Musisz sie zalogowac" << endl;
+    }
+
+
+    system("pause");
 }
 
 void AddressBook::readAllAddresses()
 {
-    addresseeManager.readAllAddresses();
+    if (userManager.isUserLoggedIn())
+    {
+        addresseeManager -> readAllAddresses();
+    }
+    else
+    {
+           cout << "Musisz sie zalogowac" << endl;
+    }
+
 }

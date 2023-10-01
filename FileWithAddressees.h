@@ -21,7 +21,7 @@ class FileWithAddressees
 
 public:
     FileWithAddressees(string nameOfFileWithAddressees) : NAME_OF_FILE_WITH_ADDRESSEES(nameOfFileWithAddressees) {lastAddresseeId = 0;};
-    int loadAddresseesLogedInUserFromFile(vector <Addressee> &addressees, int idLoggedInUser);
+    vector <Addressee> loadAddresseesLogedInUserFromFile(int idLoggedInUser);
     void appendAddresseeToFile(Addressee addressee);
     int getLastAddresseeId();
     void setLastAddresseId();

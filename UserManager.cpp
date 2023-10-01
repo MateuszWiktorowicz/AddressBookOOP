@@ -116,11 +116,15 @@ void UserManager::changePasswordLoggedInUser()
 
 void UserManager::logoutUser()
 {
-
     idLoggedInUser = 0;
 }
 
 int UserManager::getIdLoggedInUser()
 {
     return idLoggedInUser;
+}
+
+bool UserManager::isUserLoggedIn()
+{
+    return (idLoggedInUser > 0) ? true : false;
 }
