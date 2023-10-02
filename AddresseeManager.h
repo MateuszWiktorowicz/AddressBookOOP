@@ -29,6 +29,6 @@ public:
     void insertNewAddressee();
     void loadAddresseesLogedInUserFromFile();
     void readAllAddresses();
-    void clearVector();
+
 
 };

@@ -54,8 +54,3 @@ void AddresseeManager::readAllAddresses()
         cout << addressees[i].getAddress() << endl;
     }
 }
-
-void AddresseeManager::clearVector()
-{
-    addressees.clear();
-}
