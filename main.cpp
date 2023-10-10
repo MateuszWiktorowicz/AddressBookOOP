@@ -48,6 +48,8 @@ int main()
                 break;
             case '5':
                 addressBook.deleteAddressee();
+            case '6':
+                addressBook.editAddressee();
             break;
             }
         }

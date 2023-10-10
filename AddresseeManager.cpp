@@ -61,7 +61,7 @@ int AddresseeManager::deleteAddressee()
 
     system("cls");
     cout << ">>> USUWANIE WYBRANEGO ADRESATA <<<" << endl << endl;
-    deleteAddresseeId = insertDeleteAddresseId();
+    deleteAddresseeId = insertAddresseId();
 
     char sign;
     bool isAddresseExist = false;
@@ -99,13 +99,75 @@ int AddresseeManager::deleteAddressee()
 
 }
 
-int AddresseeManager::insertDeleteAddresseId()
+int AddresseeManager::insertAddresseId()
 {
-    int deleteAddresseeId = 0;
+    int addresseeId = 0;
     cout << "Podaj numer ID Adresata: ";
-    deleteAddresseeId  = HelpfullMethods::readNumber();
-    return deleteAddresseeId;
+    addresseeId  = HelpfullMethods::readNumber();
+    return addresseeId;
 }
 
+void AddresseeManager::editAddressee()
+{
+    system("cls");
+   // Addressee addressee;
+    int editAddresseeId = 0;
+    int numberOfLinieEditAddressee = 0;
+    string lineWithAddresseeData = "";
 
+    cout << ">>> EDYCJA WYBRANEGO ADRESATA <<<" << endl << endl;
+    editAddresseeId = insertAddresseId();
+
+    char choice;
+    bool isAddresseeExist = false;
+
+    for (vector <Addressee>::iterator itr = addressees.begin(); itr != addressees.end(); itr++)
+    {
+        if (itr -> getId() == editAddresseeId)
+        {
+            isAddresseeExist = true;
+            choice = MenuManager::choiceOptionFromEditMenu();
+
+            switch (choice)
+            {
+            case '1':
+                cout << "Podaj nowe imie: ";
+                itr -> setName(HelpfullMethods::readLine());
+                itr -> setName(HelpfullMethods::uppercaseFirstLetterLowercaseElseLetters(itr -> getName()));
+                break;
+            case '2':
+                cout << "Podaj nowe nazwisko: ";
+                itr -> setSurname(HelpfullMethods::readLine());
+                itr -> setSurname(HelpfullMethods::uppercaseFirstLetterLowercaseElseLetters(itr -> getSurname()));
+                break;
+            case '3':
+                cout << "Podaj nowy numer telefonu: ";
+                itr -> setPhone(HelpfullMethods::readLine());
+                break;
+            case '4':
+                cout << "Podaj nowy email: ";
+                itr -> setEmail(HelpfullMethods::readLine());
+            case '5':
+                cout << "Podaj nowy adres zamieszkania: ";
+                itr -> setAddress(HelpfullMethods::readLine());
+                break;
+            case '6':
+                cout << endl << "Powrot do menu uzytkownika" << endl << endl;
+                break;
+            default:
+                cout << endl << "Nie ma takiej opcji w menu! Powrot do menu uzytkownika." << endl << endl;
+                break;
+            }
+            if (choice != 6)
+            {
+                fileWithAddressees.updateAddresseeDataInFile(*itr);
+            }
+        }
+    }
+    if (isAddresseeExist == false)
+    {
+        cout << endl << "Nie ma takiego adresata." << endl << endl;
+    }
+    system("pause");
+}
 

@@ -42,8 +42,8 @@ string FileWithAddressees::changeAddresseDataToLinesSeparatedByVerticalBar(Addre
 {
     string lineWithAddresseData = "";
 
-    lineWithAddresseData += HelpfullMethods::convertIntoString(addressee.getId()) + '|';
-    lineWithAddresseData += HelpfullMethods::convertIntoString(addressee.getUserId()) + '|';
+    lineWithAddresseData += HelpfullMethods::convertIntegerToString(addressee.getId()) + '|';
+    lineWithAddresseData += HelpfullMethods::convertIntegerToString(addressee.getUserId()) + '|';
     lineWithAddresseData += addressee.getName() + '|';
     lineWithAddresseData += addressee.getSurname() + '|';
     lineWithAddresseData += addressee.getPhone() + '|';
@@ -250,4 +250,63 @@ int FileWithAddressees::setLastAddresseeId(int id)
    return lastAddresseeId = id;
 }
 
+
+void FileWithAddressees::updateAddresseeDataInFile(Addressee addressee)
+{
+
+    fstream textFileBeingRead, temporaryTextFile;
+    string loadedLine = "";
+    int numOfLoadedLine = 1;
+    int loadedAddresseId = 0;
+
+    textFileBeingRead.open(NAME_OF_FILE_WITH_ADDRESSEES.c_str(), ios::in);
+    temporaryTextFile.open(NAME_OF_TEMPORARY_FILE_WITH_ADDRESSEE.c_str(), ios::out);
+
+    if (textFileBeingRead.good() == true)
+    {
+        while (getline(textFileBeingRead, loadedLine))
+        {
+            stringstream ss(loadedLine);
+            string field;
+
+            getline(ss, field, '|');
+            loadedAddresseId = stoi(field);
+
+
+            if (addressee.getId() == loadedAddresseId)
+                {
+
+                 if (numOfLoadedLine != 1)
+               {
+                   temporaryTextFile << endl;
+               }
+                temporaryTextFile << HelpfullMethods::convertIntegerToString(addressee.getId()) << '|';
+                temporaryTextFile << HelpfullMethods::convertIntegerToString(addressee.getUserId()) << '|';
+                temporaryTextFile << addressee.getName() << '|';
+                temporaryTextFile << addressee.getSurname() << '|';
+                temporaryTextFile << addressee.getPhone() << '|';
+                temporaryTextFile << addressee.getEmail() << '|';
+                temporaryTextFile << addressee.getAddress() << '|';
+                }
+            else
+            {
+               if (!textFileBeingRead.eof())
+               {
+                   if (numOfLoadedLine != 1)
+                   {
+                       temporaryTextFile << endl;
+                   }
+
+               }    temporaryTextFile << loadedLine;
+            }
+            numOfLoadedLine++;
+        }
+        textFileBeingRead.close();
+        temporaryTextFile.close();
+
+        deleteOutOfDateFileWithAddressees();
+        changeTemporaryAddresseesFileNameToAddresseesFileName();
+        cout << endl << "Dane zostaly zaktualizowane." << endl << endl;
+    }
+}
 

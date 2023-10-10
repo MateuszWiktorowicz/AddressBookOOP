@@ -38,7 +38,7 @@ bool FileWithUsers::isFileEmpty()
 string FileWithUsers::changeUserDataToLinesSeparatedByVerticalBar(User user)
 {
     string userDatasLine = "";
-    userDatasLine += HelpfullMethods::convertIntoString(user.getId())+ '|';
+    userDatasLine += HelpfullMethods::convertIntegerToString(user.getId())+ '|';
     userDatasLine += user.getLogin() + '|';
     userDatasLine += user.getPassword() + '|';
 
