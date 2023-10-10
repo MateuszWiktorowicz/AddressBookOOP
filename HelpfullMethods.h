@@ -10,7 +10,7 @@ using namespace std;
 class HelpfullMethods
 {
 public:
-   static string convertIntoString(int num);
+   static string convertIntegerToString(int num);
    static string readLine();
    static string uppercaseFirstLetterLowercaseElseLetters(string text);
    static string getNumber(string text, int signPosition);

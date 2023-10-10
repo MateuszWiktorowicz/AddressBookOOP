@@ -32,6 +32,7 @@ public:
     void deleteAddresseeFromFile(int deleteAddresseeId);
     void setLastAddresseeIdAfterDeleteAddressee(int deleteAddresseeId);
     int setLastAddresseeId(int id);
+    void updateAddresseeDataInFile(Addressee addressee);
 
 
 };

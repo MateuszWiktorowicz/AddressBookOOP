@@ -7,6 +7,7 @@
 #include "Addressee.h"
 #include "FileWithAddressees.h"
 #include "helpfullMethods.h"
+#include "MenuManager.h"
 
 using namespace std;
 
@@ -19,7 +20,7 @@ class AddresseeManager
 
     Addressee insertNewAddresseeDatas();
     int deleteAddresseeFromFile();
-    int insertDeleteAddresseId();
+    int insertAddresseId();
     int getLastAddresseeIdAfterDeleteAddressee(int deleteAddresseeId);
 
 public:
@@ -32,6 +33,7 @@ public:
     void loadAddresseesLogedInUserFromFile();
     void readAllAddresses();
     int deleteAddressee();
+    void editAddressee();
 
 
 

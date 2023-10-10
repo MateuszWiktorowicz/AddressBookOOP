@@ -77,4 +77,8 @@ char AddressBook::choiceOptionFromUserMenu()
    return menuManager.choiceOptionFromUserMenu();
 }
 
+void AddressBook::editAddressee()
+{
+    addresseeManager -> editAddressee();
+}
 

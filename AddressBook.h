@@ -35,5 +35,6 @@ public:
     char choiceOptionFromMainMenu();
     char choiceOptionFromUserMenu();
     void deleteAddressee();
+    void editAddressee();
 
 };

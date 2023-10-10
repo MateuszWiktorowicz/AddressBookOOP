@@ -1,6 +1,6 @@
 #include "HelpfullMethods.h"
 
-string HelpfullMethods::convertIntoString(int num)
+string HelpfullMethods::convertIntegerToString(int num)
 {
     ostringstream ss;
     ss << num;
