@@ -34,5 +34,6 @@ public:
     bool isUserLoggedIn();
     char choiceOptionFromMainMenu();
     char choiceOptionFromUserMenu();
+    void deleteAddressee();
 
 };

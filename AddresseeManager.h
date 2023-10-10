@@ -18,6 +18,9 @@ class AddresseeManager
 
 
     Addressee insertNewAddresseeDatas();
+    int deleteAddresseeFromFile();
+    int insertDeleteAddresseId();
+    int getLastAddresseeIdAfterDeleteAddressee(int deleteAddresseeId);
 
 public:
     AddresseeManager(string nameOfFileWithAddresses, int idLoggedInUser)
@@ -25,10 +28,12 @@ public:
     {
         addressees = fileWithAddressees.loadAddresseesLogedInUserFromFile(ID_LOGGED_IN_USER);
     };
-
     void insertNewAddressee();
     void loadAddresseesLogedInUserFromFile();
     void readAllAddresses();
+    int deleteAddressee();
+
+
 
 
 };

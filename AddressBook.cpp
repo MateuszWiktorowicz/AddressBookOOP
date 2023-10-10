@@ -57,6 +57,11 @@ void AddressBook::readAllAddresses()
 
 }
 
+void AddressBook::deleteAddressee()
+{
+   addresseeManager -> deleteAddressee();
+}
+
 bool AddressBook::isUserLoggedIn()
 {
     return userManager.isUserLoggedIn();
@@ -71,4 +76,5 @@ char AddressBook::choiceOptionFromUserMenu()
 {
    return menuManager.choiceOptionFromUserMenu();
 }
+
 

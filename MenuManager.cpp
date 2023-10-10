@@ -27,6 +27,7 @@ char MenuManager::choiceOptionFromUserMenu()
     cout << "1. Dodaj adresata" << endl;
     cout << "2. Wyswietl adresatow" << endl;
     cout << "3. Wyloguj sie" << endl;
+    cout << "5. Usun osobe" << endl;
     cout << "---------------------------" << endl;
     cout << "Twoj wybor: ";
     menuOption = HelpfullMethods::readSign();
