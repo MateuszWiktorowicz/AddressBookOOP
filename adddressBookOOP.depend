@@ -1,15 +1,15 @@
 # depslib dependency file v1.0
-1696185172 source:d:\codeblocks\projects\adddressbookoop\addressbook.cpp
+1696858113 source:d:\codeblocks\projects\adddressbookoop\addressbook.cpp
 	"AddressBook.h"
 
 1693408366 source:d:\codeblocks\projects\adddressbookoop\user.cpp
 	"User.h"
 
-1696185194 source:d:\codeblocks\projects\adddressbookoop\main.cpp
+1696858122 source:d:\codeblocks\projects\adddressbookoop\main.cpp
 	<iostream>
 	"AddressBook.h"
 
-1696185165 d:\codeblocks\projects\adddressbookoop\addressbook.h
+1696356826 d:\codeblocks\projects\adddressbookoop\addressbook.h
 	<iostream>
 	"UserManager.h"
 	"AddresseeManager.h"
@@ -18,10 +18,10 @@
 1696183397 d:\codeblocks\projects\adddressbookoop\user.h
 	<iostream>
 
-1696184350 source:d:\codeblocks\projects\adddressbookoop\helpfullmethods.cpp
+1696264935 source:d:\codeblocks\projects\adddressbookoop\helpfullmethods.cpp
 	"HelpfullMethods.h"
 
-1696184350 d:\codeblocks\projects\adddressbookoop\helpfullmethods.h
+1696264924 d:\codeblocks\projects\adddressbookoop\helpfullmethods.h
 	<iostream>
 	<sstream>
 	<algorithm>
@@ -55,20 +55,20 @@
 1696183397 d:\codeblocks\projects\adddressbookoop\addressee.h
 	<iostream>
 
-1696183397 source:d:\codeblocks\projects\adddressbookoop\filewithaddressees.cpp
+1696857169 source:d:\codeblocks\projects\adddressbookoop\filewithaddressees.cpp
 	"FileWithAddressees.h"
 
-1696183397 d:\codeblocks\projects\adddressbookoop\filewithaddressees.h
+1696856344 d:\codeblocks\projects\adddressbookoop\filewithaddressees.h
 	<iostream>
 	<vector>
 	"HelpfullMethods.h"
 	"Addressee.h"
 	<fstream>
 
-1696183397 source:d:\codeblocks\projects\adddressbookoop\addresseemanager.cpp
+1696857254 source:d:\codeblocks\projects\adddressbookoop\addresseemanager.cpp
 	"AddresseeManager.h"
 
-1696183397 d:\codeblocks\projects\adddressbookoop\addresseemanager.h
+1696855997 d:\codeblocks\projects\adddressbookoop\addresseemanager.h
 	<iostream>
 	<vector>
 	<fstream>
@@ -79,7 +79,7 @@
 	"FileWithAddressees.h"
 	"helpfullMethods.h"
 
-1696185118 source:d:\codeblocks\projects\adddressbookoop\menumanager.cpp
+1696356825 source:d:\codeblocks\projects\adddressbookoop\menumanager.cpp
 	"MenuManager.h"
 
 1696184222 d:\codeblocks\projects\adddressbookoop\menumanager.h

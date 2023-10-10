@@ -33,7 +33,7 @@ int main()
         }
         else
         {
-            menuOption = addressBook.choiceOptionFromUserMenu();
+         menuOption = addressBook.choiceOptionFromUserMenu();
 
             switch (menuOption)
             {
@@ -46,6 +46,9 @@ int main()
             case '3':
                 addressBook.logoutUser();
                 break;
+            case '5':
+                addressBook.deleteAddressee();
+            break;
             }
         }
     }

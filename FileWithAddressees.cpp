@@ -27,6 +27,8 @@ void FileWithAddressees::appendAddresseeToFile(Addressee addressee)
     system("pause");
 }
 
+
+
 bool FileWithAddressees::isFileEmpty(fstream &textFile)
 {
     textFile.seekg(0, ios::end);
@@ -149,7 +151,103 @@ int FileWithAddressees::getLastAddresseeId()
     return lastAddresseeId;
 }
 
-void FileWithAddressees::setLastAddresseId()
+void FileWithAddressees::increaseLastAddresseeIdAfterInsertNewAddressee()
 {
     lastAddresseeId += 1;
 }
+
+void FileWithAddressees::deleteAddresseeFromFile(int deleteAddresseeId)
+{
+    fstream textFileBeingRead, temporaryTextFile;
+    string loadedLine = "";
+    int numOfLoadedLine = 1;
+    int loadedAddresseId = 0;
+
+    textFileBeingRead.open(NAME_OF_FILE_WITH_ADDRESSEES.c_str(), ios::in);
+    temporaryTextFile.open(NAME_OF_TEMPORARY_FILE_WITH_ADDRESSEE.c_str(), ios::out | ios::app);
+
+    if (textFileBeingRead.good() == true)
+    {
+        while (getline(textFileBeingRead, loadedLine))
+        {
+            stringstream ss(loadedLine);
+            string field;
+
+            getline(ss, field, '|');
+            loadedAddresseId = stoi(field);
+
+
+            if (deleteAddresseeId == loadedAddresseId)
+                {}
+            else
+            {
+               if (!textFileBeingRead.eof())
+               {
+                   if (numOfLoadedLine != 1)
+                   {
+                       temporaryTextFile << endl;
+                   }
+
+               }    temporaryTextFile << loadedLine;
+            }
+            numOfLoadedLine++;
+        }
+        textFileBeingRead.close();
+        temporaryTextFile.close();
+
+        deleteOutOfDateFileWithAddressees();
+        changeTemporaryAddresseesFileNameToAddresseesFileName();
+    }
+}
+
+void FileWithAddressees::deleteOutOfDateFileWithAddressees()
+{
+    if (remove(NAME_OF_FILE_WITH_ADDRESSEES.c_str()) == 0) {}
+    else
+        cout << "Nie udalo sie usunac pliku " << NAME_OF_FILE_WITH_ADDRESSEES << endl;
+}
+
+void FileWithAddressees::changeTemporaryAddresseesFileNameToAddresseesFileName()
+{
+    if (rename(NAME_OF_TEMPORARY_FILE_WITH_ADDRESSEE.c_str(), NAME_OF_FILE_WITH_ADDRESSEES.c_str()) == 0) {}
+    else
+        cout << "Nazwa pliku nie zostala zmieniona." << NAME_OF_TEMPORARY_FILE_WITH_ADDRESSEE << endl;
+}
+
+int FileWithAddressees::getFromFileLastAddresseeId()
+{
+    int lastAddresseeId = 0;
+    string oneAddresseeDatasSeparatedByBar = "";
+    string dataLastAddresseeInFile = "";
+    fstream textFile;
+    textFile.open(NAME_OF_FILE_WITH_ADDRESSEES.c_str(), ios::in);
+
+    if (textFile.good() == true)
+    {
+        while (getline(textFile, oneAddresseeDatasSeparatedByBar)) {}
+            dataLastAddresseeInFile = oneAddresseeDatasSeparatedByBar;
+            textFile.close();
+    }
+    else
+        cout << "Nie udalo sie otworzyc pliku i wczytac danych." << endl;
+
+    if (dataLastAddresseeInFile != "")
+    {
+        lastAddresseeId = loadAddresseeIdFromDataSeparatedByBars(dataLastAddresseeInFile);
+    }
+    return lastAddresseeId;
+}
+
+void FileWithAddressees::setLastAddresseeIdAfterDeleteAddressee(int deleteAddresseeId)
+{
+    if (deleteAddresseeId == getLastAddresseeId())
+        setLastAddresseeId(getFromFileLastAddresseeId());
+
+}
+
+int FileWithAddressees::setLastAddresseeId(int id)
+{
+   return lastAddresseeId = id;
+}
+
+

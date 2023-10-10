@@ -16,6 +16,7 @@ public:
    static string getNumber(string text, int signPosition);
    static int convertStringIntoInt(string num);
    static char readSign();
+   static int readNumber();
 };
 
 #endif

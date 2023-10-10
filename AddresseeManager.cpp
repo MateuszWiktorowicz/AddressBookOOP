@@ -10,7 +10,7 @@ void AddresseeManager::insertNewAddressee()
 
     addressees.push_back(addressee);
     fileWithAddressees.appendAddresseeToFile(addressee);
-    fileWithAddressees.setLastAddresseId();
+    fileWithAddressees.increaseLastAddresseeIdAfterInsertNewAddressee();
 
 }
 
@@ -54,3 +54,58 @@ void AddresseeManager::readAllAddresses()
         cout << addressees[i].getAddress() << endl;
     }
 }
+
+int AddresseeManager::deleteAddressee()
+{
+    int deleteAddresseeId = 0;
+
+    system("cls");
+    cout << ">>> USUWANIE WYBRANEGO ADRESATA <<<" << endl << endl;
+    deleteAddresseeId = insertDeleteAddresseId();
+
+    char sign;
+    bool isAddresseExist = false;
+
+    for (vector <Addressee>::iterator itr = addressees.begin(); itr != addressees.end(); itr++)
+    {
+        if (itr -> getId() == deleteAddresseeId)
+        {
+            isAddresseExist = true;
+            cout << endl << "Potwierdz naciskajac klawisz 't': ";
+            sign = HelpfullMethods::readSign();
+            if (sign == 't')
+            {
+                fileWithAddressees.deleteAddresseeFromFile(deleteAddresseeId);
+                addressees.erase(itr);
+                fileWithAddressees.setLastAddresseeIdAfterDeleteAddressee(deleteAddresseeId);
+                cout << endl << endl << "Szukany adresat zostal USUNIETY" << endl << endl;
+                system("pause");
+                break;
+            }
+            else
+            {
+                cout << endl << endl << "Wybrany adresat NIE zostal usuniety" << endl << endl;
+                system("pause");
+            }
+        }
+    }
+    if (isAddresseExist == false)
+    {
+        cout << endl << "Nie ma takiego adresata w ksiazce adresowej" << endl << endl;
+        system("pause");
+    }
+
+
+
+}
+
+int AddresseeManager::insertDeleteAddresseId()
+{
+    int deleteAddresseeId = 0;
+    cout << "Podaj numer ID Adresata: ";
+    deleteAddresseeId  = HelpfullMethods::readNumber();
+    return deleteAddresseeId;
+}
+
+
+

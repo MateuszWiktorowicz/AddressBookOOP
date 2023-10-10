@@ -63,3 +63,20 @@ char HelpfullMethods::readSign()
     }
     return sign;
 }
+
+int HelpfullMethods::readNumber()
+{
+    string input = "";
+    int num = 0;
+
+    while (true)
+    {
+        getline(cin, input);
+
+        stringstream myStream(input);
+        if (myStream >> num)
+            break;
+        cout << "To nie jest liczba. Wpisz ponownie. " << endl;
+    }
+    return num;
+}
