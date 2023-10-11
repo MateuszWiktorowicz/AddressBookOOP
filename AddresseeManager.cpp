@@ -171,3 +171,84 @@ void AddresseeManager::editAddressee()
     system("pause");
 }
 
+void AddresseeManager::searchAddresseeByName()
+{
+    string nameOfOfAddresseeLookingFor = "";
+    int numOfAddressees = 0;
+
+    system("cls");
+    if (!addressees.empty())
+    {
+        cout << ">>> WYSZUKIWANIE ADRESATOW O IMIENIU <<<" << endl << endl;
+
+        cout << "Wyszukaj adresatow o imieniu: ";
+        nameOfOfAddresseeLookingFor = HelpfullMethods::readLine();
+        nameOfOfAddresseeLookingFor = HelpfullMethods::uppercaseFirstLetterLowercaseElseLetters(nameOfOfAddresseeLookingFor);
+
+        for (vector <Addressee>::iterator  itr = addressees.begin(); itr != addressees.end(); itr++)
+        {
+            if (itr -> getName() == nameOfOfAddresseeLookingFor)
+            {
+                displayAddresseeData(*itr);
+                numOfAddressees++;
+            }
+        }
+        displayQuantitySearchedAddressees(numOfAddressees);
+    }
+    else
+    {
+        cout << endl << "Ksiazka adresowa jest pusta" << endl << endl;
+    }
+    cout << endl;
+    system("pause");
+}
+
+void AddresseeManager::displayQuantitySearchedAddressees(int numOfAddressees)
+{
+    if (numOfAddressees == 0)
+        cout << endl << "W ksiazce adresowej nie ma adresatow z tymi danymi." << endl;
+    else
+        cout << endl << "Ilosc adresatow w ksiazce adresowej wynosi: " << numOfAddressees << endl << endl;
+}
+
+void AddresseeManager::displayAddresseeData(Addressee addressee)
+{
+    cout << endl << "Id:                 " << addressee.getId() << endl;
+    cout << "Imie:               " << addressee.getName() << endl;
+    cout << "Nazwisko:           " << addressee.getSurname() << endl;
+    cout << "Numer telefonu:     " << addressee.getPhone() << endl;
+    cout << "Email:              " << addressee.getEmail() << endl;
+    cout << "Adres:              " << addressee.getAddress() << endl;
+}
+
+void AddresseeManager::searchAddresseeBySurname()
+{
+    string surnameOfOfAddresseeLookingFor = "";
+    int numOfAddressees = 0;
+
+    system("cls");
+    if (!addressees.empty())
+    {
+        cout << ">>> WYSZUKIWANIE ADRESATOW O Nazwisku <<<" << endl << endl;
+
+        cout << "Wyszukaj adresatow o nazwisku: ";
+        surnameOfOfAddresseeLookingFor = HelpfullMethods::readLine();
+        surnameOfOfAddresseeLookingFor = HelpfullMethods::uppercaseFirstLetterLowercaseElseLetters(surnameOfOfAddresseeLookingFor);
+
+        for (vector <Addressee>::iterator  itr = addressees.begin(); itr != addressees.end(); itr++)
+        {
+            if (itr -> getSurname() == surnameOfOfAddresseeLookingFor)
+            {
+                displayAddresseeData(*itr);
+                numOfAddressees++;
+            }
+        }
+        displayQuantitySearchedAddressees(numOfAddressees);
+    }
+    else
+    {
+        cout << endl << "Ksiazka adresowa jest pusta" << endl << endl;
+    }
+    cout << endl;
+    system("pause");
+}

@@ -41,15 +41,22 @@ int main()
                 addressBook.insertNewAddressee();
                 break;
             case '2':
-                addressBook.readAllAddresses();
+                addressBook.searchAddresseeByName();
                 break;
             case '3':
-                addressBook.logoutUser();
+                addressBook.searchAddresseeBySurname();
+                break;
+            case '4':
+                addressBook.readAllAddresses();
                 break;
             case '5':
                 addressBook.deleteAddressee();
+                break;
             case '6':
                 addressBook.editAddressee();
+                break;
+            case '8':
+                addressBook.logoutUser();
             break;
             }
         }
