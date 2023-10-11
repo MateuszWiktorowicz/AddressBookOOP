@@ -55,6 +55,9 @@ int main()
             case '6':
                 addressBook.editAddressee();
                 break;
+            case '7':
+                addressBook.changePasswordLoggedInUser();
+                break;
             case '8':
                 addressBook.logoutUser();
             break;

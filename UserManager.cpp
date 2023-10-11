@@ -128,3 +128,5 @@ bool UserManager::isUserLoggedIn()
 {
     return (idLoggedInUser > 0) ? true : false;
 }
+
+
