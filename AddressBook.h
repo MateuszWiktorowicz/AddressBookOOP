@@ -36,5 +36,7 @@ public:
     char choiceOptionFromUserMenu();
     void deleteAddressee();
     void editAddressee();
+    void searchAddresseeByName();
+    void searchAddresseeBySurname();
 
 };

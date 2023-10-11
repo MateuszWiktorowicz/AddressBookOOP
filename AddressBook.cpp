@@ -82,3 +82,12 @@ void AddressBook::editAddressee()
     addresseeManager -> editAddressee();
 }
 
+void AddressBook::searchAddresseeByName()
+{
+    addresseeManager -> searchAddresseeByName();
+}
+
+void AddressBook::searchAddresseeBySurname()
+{
+    addresseeManager -> searchAddresseeBySurname();
+}

@@ -22,6 +22,8 @@ class AddresseeManager
     int deleteAddresseeFromFile();
     int insertAddresseId();
     int getLastAddresseeIdAfterDeleteAddressee(int deleteAddresseeId);
+    void displayAddresseeData(Addressee addressee);
+    void displayQuantitySearchedAddressees(int numOfAddressees);
 
 public:
     AddresseeManager(string nameOfFileWithAddresses, int idLoggedInUser)
@@ -34,6 +36,8 @@ public:
     void readAllAddresses();
     int deleteAddressee();
     void editAddressee();
+    void searchAddresseeByName();
+    void searchAddresseeBySurname();
 
 
 

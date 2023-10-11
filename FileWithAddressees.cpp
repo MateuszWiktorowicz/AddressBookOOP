@@ -176,19 +176,20 @@ void FileWithAddressees::deleteAddresseeFromFile(int deleteAddresseeId)
             getline(ss, field, '|');
             loadedAddresseId = stoi(field);
 
-
             if (deleteAddresseeId == loadedAddresseId)
-                {}
+            {
+                if (numOfLoadedLine == 1)
+                {
+                    numOfLoadedLine = 0;
+                }
+            }
             else
             {
-               if (!textFileBeingRead.eof())
-               {
-                   if (numOfLoadedLine != 1)
-                   {
-                       temporaryTextFile << endl;
-                   }
-
-               }    temporaryTextFile << loadedLine;
+                if (numOfLoadedLine != 1)
+                {
+                    temporaryTextFile << endl;
+                }
+                temporaryTextFile << loadedLine;
             }
             numOfLoadedLine++;
         }
@@ -225,8 +226,8 @@ int FileWithAddressees::getFromFileLastAddresseeId()
     if (textFile.good() == true)
     {
         while (getline(textFile, oneAddresseeDatasSeparatedByBar)) {}
-            dataLastAddresseeInFile = oneAddresseeDatasSeparatedByBar;
-            textFile.close();
+        dataLastAddresseeInFile = oneAddresseeDatasSeparatedByBar;
+        textFile.close();
     }
     else
         cout << "Nie udalo sie otworzyc pliku i wczytac danych." << endl;
@@ -247,7 +248,7 @@ void FileWithAddressees::setLastAddresseeIdAfterDeleteAddressee(int deleteAddres
 
 int FileWithAddressees::setLastAddresseeId(int id)
 {
-   return lastAddresseeId = id;
+    return lastAddresseeId = id;
 }
 
 
@@ -274,12 +275,11 @@ void FileWithAddressees::updateAddresseeDataInFile(Addressee addressee)
 
 
             if (addressee.getId() == loadedAddresseId)
+            {
+                 if (((addressee.getId() != getLastAddresseeId()) && numOfLoadedLine != 1) || (addressee.getId() == getLastAddresseeId()))
                 {
-
-                 if (numOfLoadedLine != 1)
-               {
-                   temporaryTextFile << endl;
-               }
+                    temporaryTextFile << endl;
+                }
                 temporaryTextFile << HelpfullMethods::convertIntegerToString(addressee.getId()) << '|';
                 temporaryTextFile << HelpfullMethods::convertIntegerToString(addressee.getUserId()) << '|';
                 temporaryTextFile << addressee.getName() << '|';
@@ -287,17 +287,14 @@ void FileWithAddressees::updateAddresseeDataInFile(Addressee addressee)
                 temporaryTextFile << addressee.getPhone() << '|';
                 temporaryTextFile << addressee.getEmail() << '|';
                 temporaryTextFile << addressee.getAddress() << '|';
-                }
+            }
             else
             {
-               if (!textFileBeingRead.eof())
-               {
-                   if (numOfLoadedLine != 1)
-                   {
-                       temporaryTextFile << endl;
-                   }
-
-               }    temporaryTextFile << loadedLine;
+                if (numOfLoadedLine != 1)
+                {
+                    temporaryTextFile << endl;
+                }
+                temporaryTextFile << loadedLine;
             }
             numOfLoadedLine++;
         }
