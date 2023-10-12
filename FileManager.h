@@ -1,19 +1,40 @@
+#ifndef FILEMANAGER_H
+#define FILEMANAGER_H
+
 #include <iostream>
 #include <vector>
 #include "HelpfullMethods.h"
+#include "User.h"
 #include "Addressee.h"
 
 #include <fstream>
 
 using namespace std;
 
-class FileWithAddressees
+class FileManager
+{
+protected:
+    bool isFileEmpty(fstream &textFile);
+};
+
+class FileWithUsers :public FileManager
+{
+    const string NAME_OF_FILE_WITH_USERS;
+    string changeUserDataToLinesSeparatedByVerticalBar(User user);
+    User loadUserData(string userDataSeparatedByBars);
+public:
+    FileWithUsers(string nameOfFileWithUsers) : NAME_OF_FILE_WITH_USERS(nameOfFileWithUsers) {};
+    void appendUserToTextFile(User user);
+    vector <User> loadUsersFromFile();
+    void saveAllUsersInFIle (vector <User>& users);
+
+};
+
+class FileWithAddressees :public FileManager
 {
     const string NAME_OF_FILE_WITH_ADDRESSEES;
     string NAME_OF_TEMPORARY_FILE_WITH_ADDRESSEE = "temporaryAddresseesFile.txt";
     int lastAddresseeId;
-
-    bool isFileEmpty(fstream &textFile);
 
     string changeAddresseDataToLinesSeparatedByVerticalBar(Addressee addressee);
     int loadAddresseeIdFromDataSeparatedByBars(string oneAddresseeDatasSeparatedByBar);
@@ -36,3 +57,5 @@ public:
 
 
 };
+
+#endif

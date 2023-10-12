@@ -5,7 +5,7 @@
 #include <sstream>
 #include <windows.h>
 #include "Addressee.h"
-#include "FileWithAddressees.h"
+#include "FileManager.h"
 #include "helpfullMethods.h"
 #include "MenuManager.h"
 
