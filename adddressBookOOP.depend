@@ -5,7 +5,7 @@
 1693408366 source:d:\codeblocks\projects\adddressbookoop\user.cpp
 	"User.h"
 
-1697037049 source:d:\codeblocks\projects\adddressbookoop\main.cpp
+1697038158 source:d:\codeblocks\projects\adddressbookoop\main.cpp
 	<iostream>
 	"AddressBook.h"
 
@@ -26,14 +26,14 @@
 	<sstream>
 	<algorithm>
 
-1696183397 d:\codeblocks\projects\adddressbookoop\usermanager.h
+1697124951 d:\codeblocks\projects\adddressbookoop\usermanager.h
 	<iostream>
 	<vector>
 	<fstream>
 	<sstream>
 	<windows.h>
 	"User.h"
-	"FileWithUsers.h"
+	"FileManager.h"
 	"helpfullMethods.h"
 
 1696948987 source:d:\codeblocks\projects\adddressbookoop\filewithusers.cpp
@@ -46,7 +46,7 @@
 	"User.h"
 	<fstream>
 
-1697037954 source:d:\codeblocks\projects\adddressbookoop\usermanager.cpp
+1697038158 source:d:\codeblocks\projects\adddressbookoop\usermanager.cpp
 	"UserManager.h"
 
 1694096571 source:d:\codeblocks\projects\adddressbookoop\addressee.cpp
@@ -68,7 +68,7 @@
 1697037324 source:d:\codeblocks\projects\adddressbookoop\addresseemanager.cpp
 	"AddresseeManager.h"
 
-1697037324 d:\codeblocks\projects\adddressbookoop\addresseemanager.h
+1697124953 d:\codeblocks\projects\adddressbookoop\addresseemanager.h
 	<iostream>
 	<vector>
 	<fstream>
@@ -76,7 +76,7 @@
 	<sstream>
 	<windows.h>
 	"Addressee.h"
-	"FileWithAddressees.h"
+	"FileManager.h"
 	"helpfullMethods.h"
 	"MenuManager.h"
 
@@ -86,4 +86,15 @@
 1696948987 d:\codeblocks\projects\adddressbookoop\menumanager.h
 	<iostream>
 	"HelpfullMethods.h"
+
+1697125104 d:\codeblocks\projects\adddressbookoop\filemanager.h
+	<iostream>
+	<vector>
+	"HelpfullMethods.h"
+	"User.h"
+	"Addressee.h"
+	<fstream>
+
+1697124907 source:d:\codeblocks\projects\adddressbookoop\filemanager.cpp
+	"FileManager.h"
 

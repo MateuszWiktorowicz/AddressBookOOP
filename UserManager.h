@@ -5,7 +5,7 @@
 #include <windows.h>
 
 #include "User.h"
-#include "FileWithUsers.h"
+#include "FileManager.h"
 #include "helpfullMethods.h"
 
 using namespace std;
