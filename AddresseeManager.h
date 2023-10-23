@@ -5,7 +5,7 @@
 #include <sstream>
 #include <windows.h>
 #include "Addressee.h"
-#include "FileManager.h"
+#include "FileWithAddressees.h"
 #include "helpfullMethods.h"
 #include "MenuManager.h"
 
@@ -37,8 +37,5 @@ public:
     void editAddressee();
     void searchAddresseeByName();
     void searchAddresseeBySurname();
-
-
-
 
 };

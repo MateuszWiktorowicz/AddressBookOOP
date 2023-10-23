@@ -5,7 +5,7 @@
 #include <windows.h>
 
 #include "User.h"
-#include "FileManager.h"
+#include "FileWithUsers.h"
 #include "helpfullMethods.h"
 
 using namespace std;
@@ -21,7 +21,7 @@ class UserManager
     bool isLoginExist(string login);
     User loadUserData(string userDataSeparatedByBars);
 public:
-    UserManager(string nameOfFileWithUsers) : fileWithUsers(nameOfFileWithUsers)
+    UserManager(string fileName) : fileWithUsers(fileName)
     {
         idLoggedInUser = 0;
         users = fileWithUsers.loadUsersFromFile();
