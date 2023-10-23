@@ -55,7 +55,7 @@ void AddresseeManager::readAllAddresses()
     }
 }
 
-int AddresseeManager::deleteAddressee()
+void AddresseeManager::deleteAddressee()
 {
     int deleteAddresseeId = 0;
 
@@ -94,9 +94,6 @@ int AddresseeManager::deleteAddressee()
         cout << endl << "Nie ma takiego adresata w ksiazce adresowej" << endl << endl;
         system("pause");
     }
-
-
-
 }
 
 int AddresseeManager::insertAddresseId()
@@ -112,7 +109,6 @@ void AddresseeManager::editAddressee()
     system("cls");
    // Addressee addressee;
     int editAddresseeId = 0;
-    int numberOfLinieEditAddressee = 0;
     string lineWithAddresseeData = "";
 
     cout << ">>> EDYCJA WYBRANEGO ADRESATA <<<" << endl << endl;
