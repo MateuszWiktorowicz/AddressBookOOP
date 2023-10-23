@@ -8,7 +8,6 @@ using namespace std;
 
 class AddressBook
 {
-    MenuManager menuManager;
     UserManager userManager;
     AddresseeManager *addresseeManager;
     const string NAME_OF_FILE_WITH_ADDRESSEES;

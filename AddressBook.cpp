@@ -69,12 +69,12 @@ bool AddressBook::isUserLoggedIn()
 
 char AddressBook::choiceOptionFromMainMenu()
 {
-   return menuManager.choiceOptionFromMainMenu();
+   return MenuManager::choiceOptionFromMainMenu();
 }
 
 char AddressBook::choiceOptionFromUserMenu()
 {
-   return menuManager.choiceOptionFromUserMenu();
+   return MenuManager::choiceOptionFromUserMenu();
 }
 
 void AddressBook::editAddressee()
