@@ -60,7 +60,8 @@ void AddresseeManager::deleteAddressee()
 
     system("cls");
     cout << ">>> USUWANIE WYBRANEGO ADRESATA <<<" << endl << endl;
-    deleteAddresseeId = insertAddresseId();
+    cout << "Podaj id adresata" << endl;
+    deleteAddresseeId = HelpfullMethods::readNumber();
 
     char sign;
     bool isAddresseExist = false;
@@ -95,23 +96,16 @@ void AddresseeManager::deleteAddressee()
     }
 }
 
-int AddresseeManager::insertAddresseId()
-{
-    int addresseeId = 0;
-    cout << "Podaj numer ID Adresata: ";
-    addresseeId  = HelpfullMethods::readNumber();
-    return addresseeId;
-}
-
 void AddresseeManager::editAddressee()
 {
     system("cls");
-   // Addressee addressee;
+
     int editAddresseeId = 0;
     string lineWithAddresseeData = "";
 
     cout << ">>> EDYCJA WYBRANEGO ADRESATA <<<" << endl << endl;
-    editAddresseeId = insertAddresseId();
+    cout << "Podaj id adresata" << endl;
+    editAddresseeId = HelpfullMethods::readNumber();
 
     char choice;
     bool isAddresseeExist = false;

@@ -20,7 +20,6 @@ class AddresseeManager
 
     Addressee insertNewAddresseeDatas();
     int deleteAddresseeFromFile();
-    int insertAddresseId();
     int getLastAddresseeIdAfterDeleteAddressee(int deleteAddresseeId);
     void displayAddresseeData(Addressee addressee);
     void displayQuantitySearchedAddressees(int numOfAddressees);
