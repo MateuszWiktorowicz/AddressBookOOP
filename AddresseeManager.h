@@ -38,7 +38,4 @@ public:
     void searchAddresseeByName();
     void searchAddresseeBySurname();
 
-
-
-
 };

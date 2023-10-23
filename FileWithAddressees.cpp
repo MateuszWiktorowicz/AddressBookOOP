@@ -172,7 +172,7 @@ void FileWithAddressees::deleteOutOfDateFileWithAddressees()
 
 void FileWithAddressees::changeTemporaryAddresseesFileNameToAddresseesFileName()
 {
-    if (rename(FileManager::getFileName().c_str(), FileManager::getFileName().c_str()) == 0) {}
+    if (rename(NAME_OF_TEMPORARY_FILE_WITH_ADDRESSEE.c_str(), FileManager::getFileName().c_str()) == 0) {}
     else
         cout << "Nazwa pliku nie zostala zmieniona." << FileManager::getFileName() << endl;
 }

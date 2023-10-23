@@ -4,7 +4,7 @@ void FileWithUsers::appendUserToTextFile(User user)
 {
     fstream textFile;
     string userDatasLine = "";
-    textFile.open(NAME_OF_FILE_WITH_USERS.c_str(), ios::app);
+    textFile.open(FileManager::getFileName().c_str(), ios::app);
 
     if (textFile.good() == true)
     {
@@ -20,7 +20,7 @@ void FileWithUsers::appendUserToTextFile(User user)
         }
     }
     else
-        cout << "Nie udalo sie otworzyc pliku " << NAME_OF_FILE_WITH_USERS << " i zapisac w nim danych." << endl;
+        cout << "Nie udalo sie otworzyc pliku " << FileManager::getFileName() << " i zapisac w nim danych." << endl;
     textFile.close();
 }
 
@@ -42,7 +42,7 @@ vector <User> FileWithUsers::loadUsersFromFile()
     string userDataSeparatedByBars = "";
 
 
-    textFile.open(NAME_OF_FILE_WITH_USERS.c_str(), ios::in);
+    textFile.open(FileManager::getFileName().c_str(), ios::in);
 
     if (textFile.good() == true)
     {
@@ -98,7 +98,7 @@ void FileWithUsers::saveAllUsersInFIle(vector <User> &users)
     string lineWithUsersData = "";
     vector <User>::iterator itrEnd = --users.end();
 
-    textFile.open(NAME_OF_FILE_WITH_USERS.c_str(), ios::out);
+    textFile.open(FileManager::getFileName().c_str(), ios::out);
 
     if (textFile.good() == true)
     {
@@ -119,7 +119,7 @@ void FileWithUsers::saveAllUsersInFIle(vector <User> &users)
     }
     else
     {
-        cout << "Nie mozna otworzyc pliku " << NAME_OF_FILE_WITH_USERS << endl;
+        cout << "Nie mozna otworzyc pliku " << FileManager::getFileName()<< endl;
     }
     textFile.close();
 }

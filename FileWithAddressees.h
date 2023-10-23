@@ -8,7 +8,7 @@
 
 class FileWithAddressees : public FileManager
 {
-    string NAME_OF_TEMPORARY_FILE_WITH_ADDRESSEE = "temporaryAddresseesFile.txt";
+    string const NAME_OF_TEMPORARY_FILE_WITH_ADDRESSEE = "temporaryAddresseesFile.txt";
     int lastAddresseeId;
 
     string changeAddresseDataToLinesSeparatedByVerticalBar(Addressee addressee);

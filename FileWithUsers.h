@@ -8,7 +8,6 @@
 
 class FileWithUsers : public FileManager
 {
-    const string NAME_OF_FILE_WITH_USERS;
 
     string changeUserDataToLinesSeparatedByVerticalBar(User user);
     User loadUserData(string userDataSeparatedByBars);
