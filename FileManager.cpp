@@ -169,6 +169,11 @@ void FileWithAddressees::deleteAddresseeFromFile(int deleteAddresseeId)
         deleteOutOfDateFileWithAddressees();
         changeTemporaryAddresseesFileNameToAddresseesFileName();
     }
+    if (deleteAddresseeId == getLastAddresseeId())
+    {
+       setLastAddresseeId(getFromFileLastAddresseeId());
+    }
+
 }
 
 void FileWithAddressees::deleteOutOfDateFileWithAddressees()
@@ -207,13 +212,6 @@ int FileWithAddressees::getFromFileLastAddresseeId()
         lastAddresseeId = loadAddresseeIdFromDataSeparatedByBars(dataLastAddresseeInFile);
     }
     return lastAddresseeId;
-}
-
-void FileWithAddressees::setLastAddresseeIdAfterDeleteAddressee(int deleteAddresseeId)
-{
-    if (deleteAddresseeId == getLastAddresseeId())
-        setLastAddresseeId(getFromFileLastAddresseeId());
-
 }
 
 int FileWithAddressees::setLastAddresseeId(int id)

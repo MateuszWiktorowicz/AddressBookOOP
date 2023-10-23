@@ -77,7 +77,6 @@ void AddresseeManager::deleteAddressee()
             {
                 fileWithAddressees.deleteAddresseeFromFile(deleteAddresseeId);
                 addressees.erase(itr);
-                fileWithAddressees.setLastAddresseeIdAfterDeleteAddressee(deleteAddresseeId);
                 cout << endl << endl << "Szukany adresat zostal USUNIETY" << endl << endl;
                 system("pause");
                 break;
@@ -214,7 +213,6 @@ void AddresseeManager::searchAddresseeBySurname()
 {
     string surnameOfOfAddresseeLookingFor = "";
     int numOfAddressees = 0;
-
     system("cls");
     if (!addressees.empty())
     {
