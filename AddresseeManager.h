@@ -31,7 +31,6 @@ public:
         addressees = fileWithAddressees.loadAddresseesLogedInUserFromFile(ID_LOGGED_IN_USER);
     };
     void insertNewAddressee();
-    void loadAddresseesLogedInUserFromFile();
     void readAllAddresses();
     void deleteAddressee();
     void editAddressee();

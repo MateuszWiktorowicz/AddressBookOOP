@@ -19,6 +19,7 @@ public:
         this -> name = name;
         this -> surname = surname;
         this -> phone = phone;
+        this -> email = email;
         this -> address = address;
     }
     void setId(int newId);

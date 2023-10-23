@@ -201,9 +201,9 @@ int FileWithAddressees::getFromFileLastAddresseeId()
     return lastAddresseeId;
 }
 
-int FileWithAddressees::setLastAddresseeId(int id)
+void FileWithAddressees::setLastAddresseeId(int id)
 {
-    return lastAddresseeId = id;
+     lastAddresseeId = id;
 }
 
 

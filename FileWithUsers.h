@@ -8,7 +8,6 @@
 
 class FileWithUsers : public FileManager
 {
-
     string changeUserDataToLinesSeparatedByVerticalBar(User user);
     User loadUserData(string userDataSeparatedByBars);
 public:
