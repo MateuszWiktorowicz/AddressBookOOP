@@ -126,11 +126,6 @@ int FileWithAddressees::getLastAddresseeId()
     return lastAddresseeId;
 }
 
-void FileWithAddressees::increaseLastAddresseeIdAfterInsertNewAddressee()
-{
-    lastAddresseeId += 1;
-}
-
 void FileWithAddressees::deleteAddresseeFromFile(int deleteAddresseeId)
 {
     fstream textFileBeingRead, temporaryTextFile;
@@ -174,6 +169,11 @@ void FileWithAddressees::deleteAddresseeFromFile(int deleteAddresseeId)
         deleteOutOfDateFileWithAddressees();
         changeTemporaryAddresseesFileNameToAddresseesFileName();
     }
+    if (deleteAddresseeId == getLastAddresseeId())
+    {
+       setLastAddresseeId(getFromFileLastAddresseeId());
+    }
+
 }
 
 void FileWithAddressees::deleteOutOfDateFileWithAddressees()
@@ -212,13 +212,6 @@ int FileWithAddressees::getFromFileLastAddresseeId()
         lastAddresseeId = loadAddresseeIdFromDataSeparatedByBars(dataLastAddresseeInFile);
     }
     return lastAddresseeId;
-}
-
-void FileWithAddressees::setLastAddresseeIdAfterDeleteAddressee(int deleteAddresseeId)
-{
-    if (deleteAddresseeId == getLastAddresseeId())
-        setLastAddresseeId(getFromFileLastAddresseeId());
-
 }
 
 int FileWithAddressees::setLastAddresseeId(int id)
@@ -307,6 +300,7 @@ void FileWithAddressees::appendAddresseeToFile(Addressee addressee)
     {
         cout << "Nie udalo sie otworzyc pliku i zapisac w nim danych." << endl;
     }
+    lastAddresseeId += 1;
     textFile.close();
     system("pause");
 }

@@ -10,7 +10,6 @@ void AddresseeManager::insertNewAddressee()
 
     addressees.push_back(addressee);
     fileWithAddressees.appendAddresseeToFile(addressee);
-    fileWithAddressees.increaseLastAddresseeIdAfterInsertNewAddressee();
 
 }
 
@@ -55,13 +54,14 @@ void AddresseeManager::readAllAddresses()
     }
 }
 
-int AddresseeManager::deleteAddressee()
+void AddresseeManager::deleteAddressee()
 {
     int deleteAddresseeId = 0;
 
     system("cls");
     cout << ">>> USUWANIE WYBRANEGO ADRESATA <<<" << endl << endl;
-    deleteAddresseeId = insertAddresseId();
+    cout << "Podaj id adresata" << endl;
+    deleteAddresseeId = HelpfullMethods::readNumber();
 
     char sign;
     bool isAddresseExist = false;
@@ -77,7 +77,6 @@ int AddresseeManager::deleteAddressee()
             {
                 fileWithAddressees.deleteAddresseeFromFile(deleteAddresseeId);
                 addressees.erase(itr);
-                fileWithAddressees.setLastAddresseeIdAfterDeleteAddressee(deleteAddresseeId);
                 cout << endl << endl << "Szukany adresat zostal USUNIETY" << endl << endl;
                 system("pause");
                 break;
@@ -94,29 +93,18 @@ int AddresseeManager::deleteAddressee()
         cout << endl << "Nie ma takiego adresata w ksiazce adresowej" << endl << endl;
         system("pause");
     }
-
-
-
-}
-
-int AddresseeManager::insertAddresseId()
-{
-    int addresseeId = 0;
-    cout << "Podaj numer ID Adresata: ";
-    addresseeId  = HelpfullMethods::readNumber();
-    return addresseeId;
 }
 
 void AddresseeManager::editAddressee()
 {
     system("cls");
-   // Addressee addressee;
+
     int editAddresseeId = 0;
-    int numberOfLinieEditAddressee = 0;
     string lineWithAddresseeData = "";
 
     cout << ">>> EDYCJA WYBRANEGO ADRESATA <<<" << endl << endl;
-    editAddresseeId = insertAddresseId();
+    cout << "Podaj id adresata" << endl;
+    editAddresseeId = HelpfullMethods::readNumber();
 
     char choice;
     bool isAddresseeExist = false;
@@ -225,7 +213,6 @@ void AddresseeManager::searchAddresseeBySurname()
 {
     string surnameOfOfAddresseeLookingFor = "";
     int numOfAddressees = 0;
-
     system("cls");
     if (!addressees.empty())
     {

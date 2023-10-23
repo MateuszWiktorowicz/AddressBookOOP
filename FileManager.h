@@ -49,9 +49,7 @@ public:
     vector <Addressee> loadAddresseesLogedInUserFromFile(int idLoggedInUser);
     void appendAddresseeToFile(Addressee addressee);
     int getLastAddresseeId();
-    void increaseLastAddresseeIdAfterInsertNewAddressee();
     void deleteAddresseeFromFile(int deleteAddresseeId);
-    void setLastAddresseeIdAfterDeleteAddressee(int deleteAddresseeId);
     int setLastAddresseeId(int id);
     void updateAddresseeDataInFile(Addressee addressee);
 

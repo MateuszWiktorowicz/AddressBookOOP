@@ -20,21 +20,20 @@ class AddresseeManager
 
     Addressee insertNewAddresseeDatas();
     int deleteAddresseeFromFile();
-    int insertAddresseId();
     int getLastAddresseeIdAfterDeleteAddressee(int deleteAddresseeId);
     void displayAddresseeData(Addressee addressee);
     void displayQuantitySearchedAddressees(int numOfAddressees);
 
 public:
     AddresseeManager(string nameOfFileWithAddresses, int idLoggedInUser)
-    : fileWithAddressees(nameOfFileWithAddresses), ID_LOGGED_IN_USER(idLoggedInUser)
+    : ID_LOGGED_IN_USER(idLoggedInUser), fileWithAddressees(nameOfFileWithAddresses)
     {
         addressees = fileWithAddressees.loadAddresseesLogedInUserFromFile(ID_LOGGED_IN_USER);
     };
     void insertNewAddressee();
     void loadAddresseesLogedInUserFromFile();
     void readAllAddresses();
-    int deleteAddressee();
+    void deleteAddressee();
     void editAddressee();
     void searchAddresseeByName();
     void searchAddresseeBySurname();
