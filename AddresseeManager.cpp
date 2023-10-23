@@ -10,7 +10,6 @@ void AddresseeManager::insertNewAddressee()
 
     addressees.push_back(addressee);
     fileWithAddressees.appendAddresseeToFile(addressee);
-    fileWithAddressees.increaseLastAddresseeIdAfterInsertNewAddressee();
 
 }
 

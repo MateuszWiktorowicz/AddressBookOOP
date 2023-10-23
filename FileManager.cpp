@@ -126,11 +126,6 @@ int FileWithAddressees::getLastAddresseeId()
     return lastAddresseeId;
 }
 
-void FileWithAddressees::increaseLastAddresseeIdAfterInsertNewAddressee()
-{
-    lastAddresseeId += 1;
-}
-
 void FileWithAddressees::deleteAddresseeFromFile(int deleteAddresseeId)
 {
     fstream textFileBeingRead, temporaryTextFile;
@@ -307,6 +302,7 @@ void FileWithAddressees::appendAddresseeToFile(Addressee addressee)
     {
         cout << "Nie udalo sie otworzyc pliku i zapisac w nim danych." << endl;
     }
+    lastAddresseeId += 1;
     textFile.close();
     system("pause");
 }
